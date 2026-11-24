@@ -31,8 +31,15 @@ Judgement JSON format (see ``prompts/adjudicate.md``)::
 
     {"verdict": "TP" | "FP" | "uncertain",
      "evidence": {"kind": "sanitizer" | "constant",
-                  "api": "..." | null, "line": 12} | null,
+                  "api": "..." | null, "line": 12,
+                  "file": "Utils.java" (optional)} | null,
      "reasoning": "...", "confidence": 0.0-1.0}
+
+When ``evidence["file"]`` names a file, the cited line is resolved
+within that file's ``// file:`` sections only; without it, the first
+``NNN:`` match in the slice wins. The file hint matters when the
+evidence lives in a different file from the sink (e.g. a constant
+defined in a helper class), where two files can share a line number.
 
 The older ``sanitizer_evidence`` key ({"api": ..., "line": ...}) is still
 accepted and treated as kind ``sanitizer``.
@@ -52,18 +59,39 @@ VERDICTS = ("TP", "FP", "uncertain")
 _LITERAL_RE = re.compile(r'"[^"]*"|\b\d+(?:\.\d+)?\b')
 
 
-def _resolve_line(lines, line_no):
+def _resolve_line(lines, line_no, file_hint=None):
     """Return the code text for a cited line number.
 
     Slices are presented to the LLM with original file line numbers as
     an ``NNN: `` prefix, so a cited number is first matched against
     those prefixes; otherwise it is treated as a 1-based position in
     the slice text. Returns None when the number cannot be resolved.
+
+    When ``file_hint`` is given (a file name such as ``"Utils.java"``),
+    only lines in sections headed by ``// file: <that name>`` are
+    considered, so a line number shared by two files resolves to the
+    cited one instead of the first match. Without a hint, the first
+    ``NNN:`` match wins (backward compatible).
     """
     prefix = str(line_no) + ":"
+    header_re = re.compile(r"^// file:\s*(\S+)")
+    current_file = None
+    first_match = None
     for text in lines:
-        if text.startswith(prefix):
+        m = header_re.match(text)
+        if m:
+            current_file = m.group(1)
+            continue
+        if not text.startswith(prefix):
+            continue
+        if first_match is None:
+            first_match = text[len(prefix):]
+        if file_hint is None or current_file == file_hint:
             return text[len(prefix):]
+    if file_hint is not None:
+        return None
+    if first_match is not None:
+        return first_match
     if 1 <= line_no <= len(lines):
         return lines[line_no - 1]
     return None
@@ -82,7 +110,10 @@ def check_evidence(evidence, lines):
     line_no = evidence.get("line")
     if not isinstance(line_no, int) or isinstance(line_no, bool):
         return False, "evidence.line must be an integer"
-    line_text = _resolve_line(lines, line_no)
+    file_hint = evidence.get("file")
+    if file_hint is not None and not isinstance(file_hint, str):
+        return False, "evidence.file must be a string"
+    line_text = _resolve_line(lines, line_no, file_hint)
     if line_text is None:
         return False, f"line {line_no} not found in slice ({len(lines)} lines)"
     if kind == "constant":

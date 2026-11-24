@@ -36,11 +36,7 @@ by a static analyzer. Decide whether it is a real vulnerability.
 
 CWE under review: CWE-{cwe} ({cwe_name}).
 
-FLOW FACTS (from the static analyzer; treat the flow path as given,
-do not invent additional flows):
-{flow_facts}
-
-CODE SLICE (1-based line numbers; only this code is visible to you):
+{flow_facts_block}CODE SLICE (1-based line numbers; only this code is visible to you):
 {slice}
 
 SANITIZER CHECKLIST for CWE-{cwe}:
@@ -75,11 +71,21 @@ Rules:
    "FP"; if it concludes there is a real vulnerability, the verdict
    is "TP".
 
+8. The slice may include FIELD DEFINITIONS listed per file after the
+   method section. A value that comes from a field whose definition
+   is a constant (for example a `static final` string built only
+   from literals and non-tainted calls) is not attacker-controlled.
+   When the evidence you cite is in a file other than the sink's
+   file, include the file name in the evidence object as
+   "file": "<name>" (for example "Utils.java"), so the citation
+   resolves to the right file. Cite the line number as shown in the
+   slice.
+
 Reply with EXACTLY one JSON object, no other text, no markdown fences.
 Inside the `reasoning` string, do not use double-quote characters;
 use single quotes if you need to quote code.
 {{"verdict": "TP" | "FP" | "uncertain",
- "evidence": {{"kind": "sanitizer" | "constant", "api": "<exact API name as it appears in the code, or null for constant>", "line": <integer>}} | null,
+ "evidence": {{"kind": "sanitizer" | "constant", "api": "<exact API name as it appears in the code, or null for constant>", "line": <integer>, "file": "<file name, only when the evidence is in a different file from the sink>"}} | null,
  "reasoning": "<at most 3 sentences>",
  "confidence": <number between 0 and 1>}}
 """
@@ -130,25 +136,35 @@ Does NOT count:
 }
 
 
-def build_prompt(entry):
+def build_prompt(entry, include_flow_facts=True):
     cwe = str(entry["cwe"])
     checklist = CHECKLISTS.get(cwe, "No checklist for this CWE; judge from the CWE name.")
+    if include_flow_facts:
+        flow_facts_block = (
+            "FLOW FACTS (from the static analyzer; treat the flow path as given,\n"
+            "do not invent additional flows):\n"
+            f"{entry['flow_facts']}\n\n"
+        )
+    else:
+        # Ablation N0 ("LLM alone"): same prompt, FLOW FACTS block removed.
+        flow_facts_block = ""
     return PROMPT_TEMPLATE.format(
         cwe=cwe,
         cwe_name=entry.get("cwe_name", ""),
-        flow_facts=entry["flow_facts"],
+        flow_facts_block=flow_facts_block,
         slice=entry["slice"],
         checklist=checklist,
     )
 
 
-def call_chat(base_url, api_key, model, prompt, temperature):
+def call_chat(base_url, api_key, model, prompt, temperature, reasoning_effort=None):
     return call_chat_messages(
         base_url,
         api_key,
         model,
         [{"role": "user", "content": prompt}],
         temperature,
+        reasoning_effort,
     )
 
 
@@ -198,11 +214,68 @@ REPAIR_INSTRUCTION = (
     "code)."
 )
 
+# Verdict/reasoning consistency check (added 2026-11-24, pilot failure
+# mode). The 01878 re-run on qwen3-coder-next reasoned correctly --
+# "(7*18)+106 = 232 > 200, so bar is always the constant ... no SQL
+# injection vulnerability occurs" -- but still returned verdict "TP"
+# with confidence 1.0. Prompt rule 7 (verdict must agree with
+# reasoning) was ignored, so the harness must catch the mismatch
+# instead of trusting the verdict field. The check is deliberately
+# conservative: it only fires on an explicit conclusion phrase that
+# contradicts the verdict (e.g. "no vulnerability occurs" with TP,
+# "is a real vulnerability" with FP). Anything else counts as
+# consistent; ambiguous wording is left alone.
+_FP_CONCLUSION_PHRASES = (
+    "no vulnerability",
+    "not a vulnerability",
+    "not exploitable",
+    "is not vulnerable",
+    "receives no user input",
+    "no user input reaches",
+    "not attacker-controlled",
+    "not attacker controlled",
+)
+_TP_CONCLUSION_PHRASES = (
+    "is a real vulnerability",
+    "is an exploitable vulnerability",
+    "real, exploitable vulnerability",
+    "enabling sql injection",
+    "enables sql injection",
+    "is vulnerable to",
+)
 
-def call_chat_messages(base_url, api_key, model, messages, temperature):
-    body = json.dumps(
-        {"model": model, "messages": messages, "temperature": temperature}
-    ).encode("utf-8")
+
+def check_consistency(parsed):
+    """Return (consistent, detail) for a parsed verdict dict."""
+    if not parsed:
+        return False, "no parsed verdict"
+    verdict = parsed.get("verdict")
+    reasoning = (parsed.get("reasoning") or "").lower()
+    if verdict == "TP" and any(p in reasoning for p in _FP_CONCLUSION_PHRASES):
+        return False, "verdict TP but reasoning concludes no vulnerability"
+    if verdict == "FP" and any(p in reasoning for p in _TP_CONCLUSION_PHRASES):
+        return False, "verdict FP but reasoning concludes a real vulnerability"
+    return True, "verdict agrees with reasoning"
+
+
+CONSISTENCY_REPAIR_INSTRUCTION = (
+    "Your reasoning and your verdict disagree: your reasoning concludes "
+    "there is NO vulnerability, but your verdict says \"TP\" (or vice "
+    "versa). Re-read your own reasoning above and reply again with one "
+    "JSON object only, keeping the same reasoning, but with the verdict "
+    "that matches the conclusion your reasoning actually reaches. Do not "
+    "use any double-quote characters inside the reasoning string."
+)
+
+
+def call_chat_messages(base_url, api_key, model, messages, temperature, reasoning_effort=None):
+    payload = {"model": model, "messages": messages, "temperature": temperature}
+    if reasoning_effort:
+        # OpenAI-compatible top-level field; qwen3.8:27b lists
+        # "reasoning_effort" among its supported parameters. Only sent
+        # when --reasoning-effort is given, so default calls are unchanged.
+        payload["reasoning_effort"] = reasoning_effort
+    body = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(
         base_url.rstrip("/") + "/chat/completions",
         data=body,
@@ -223,8 +296,13 @@ def main(argv=None):
     parser.add_argument("--output", required=True, help="JSONL output path (one record per flow).")
     parser.add_argument("--base-url", default=DEFAULT_BASE_URL)
     parser.add_argument("--temperature", type=float, default=0.0)
+    parser.add_argument("--reasoning-effort", default=None,
+                        help="Pass reasoning_effort to the model (e.g. medium, xhigh). "
+                             "Only for models that list it as supported, e.g. qwen3.8:27b.")
     parser.add_argument("--limit", type=int, default=0, help="Only run the first N flows (0 = all).")
     parser.add_argument("--flow-ids", default="", help="Comma-separated flow_ids to run (default: all).")
+    parser.add_argument("--no-flow-facts", action="store_true",
+                        help="Ablation N0: omit the FLOW FACTS block (LLM alone, slice only).")
     parser.add_argument("--delay", type=float, default=0.5, help="Seconds to wait between calls.")
     args = parser.parse_args(argv)
 
@@ -244,10 +322,11 @@ def main(argv=None):
     counts = {"TP": 0, "FP": 0, "uncertain": 0, "parse_error": 0}
     with open(args.output, "w", encoding="utf-8") as out:
         for i, entry in enumerate(entries):
-            prompt = build_prompt(entry)
+            prompt = build_prompt(entry, include_flow_facts=not args.no_flow_facts)
             attempts = []
             try:
-                resp = call_chat(args.base_url, api_key, args.model, prompt, args.temperature)
+                resp = call_chat(args.base_url, api_key, args.model, prompt, args.temperature,
+                                 args.reasoning_effort)
                 raw = resp["choices"][0]["message"]["content"]
                 usage = resp.get("usage")
             except (urllib.error.URLError, KeyError, IndexError) as exc:
@@ -258,6 +337,37 @@ def main(argv=None):
             else:
                 parsed, error = parse_verdict(raw)
                 attempts.append({"raw_output": raw, "parse_error": error})
+                if parsed is not None:
+                    # Verdict/reasoning consistency: a parsed verdict is
+                    # not trusted blindly. On mismatch (e.g. 01878 re-run:
+                    # reasoning "no SQL injection vulnerability occurs"
+                    # but verdict "TP"), one repair attempt asks the model
+                    # to re-emit the verdict matching its own reasoning.
+                    consistent, consistency_detail = check_consistency(parsed)
+                    if not consistent:
+                        try:
+                            repair_resp = call_chat_messages(
+                                args.base_url,
+                                api_key,
+                                args.model,
+                                [
+                                    {"role": "user", "content": prompt},
+                                    {"role": "assistant", "content": raw},
+                                    {"role": "user", "content": CONSISTENCY_REPAIR_INSTRUCTION},
+                                ],
+                                args.temperature,
+                                args.reasoning_effort,
+                            )
+                            raw2 = repair_resp["choices"][0]["message"]["content"]
+                            usage = repair_resp.get("usage", usage)
+                        except (urllib.error.URLError, KeyError, IndexError) as exc:
+                            attempts.append({"raw_output": "", "parse_error": f"consistency repair call failed: {exc}"})
+                        else:
+                            parsed2, error2 = parse_verdict(raw2)
+                            attempts.append({"raw_output": raw2, "parse_error": error2})
+                            if parsed2 is not None:
+                                raw, parsed, error = raw2, parsed2, error2
+                                consistent, consistency_detail = check_consistency(parsed)
                 if parsed is None:
                     # One repair attempt: show the model its broken reply
                     # and ask for the same verdict as clean JSON.
@@ -272,6 +382,7 @@ def main(argv=None):
                                 {"role": "user", "content": REPAIR_INSTRUCTION},
                             ],
                             args.temperature,
+                            args.reasoning_effort,
                         )
                         raw2 = repair_resp["choices"][0]["message"]["content"]
                         usage = repair_resp.get("usage", usage)
@@ -286,23 +397,30 @@ def main(argv=None):
                             raw = raw2
             verdict = parsed["verdict"] if parsed else "parse_error"
             counts[verdict] = counts.get(verdict, 0) + 1
+            if parsed is not None:
+                consistent, consistency_detail = check_consistency(parsed)
+            else:
+                consistent, consistency_detail = False, "no parsed verdict"
             record = {
                 "flow_id": entry.get("flow_id", f"flow-{i}"),
                 "case": entry.get("case"),
                 "cwe": str(entry["cwe"]),
                 "model": args.model,
                 "temperature": args.temperature,
+                "reasoning_effort": args.reasoning_effort,
                 "prompt": prompt,
                 "raw_output": raw,
                 "parsed": parsed,
                 "parse_error": error,
+                "consistency": {"consistent": consistent, "detail": consistency_detail},
                 "usage": usage,
                 "attempts": attempts,
             }
             out.write(json.dumps(record, ensure_ascii=False) + "\n")
             out.flush()
             print(f"[{i + 1}/{len(entries)}] {record['case']} CWE-{record['cwe']}: {verdict}"
-                  + (f" (conf {parsed.get('confidence')})" if parsed else f" ({error})"))
+                  + (f" (conf {parsed.get('confidence')})" if parsed else f" ({error})")
+                  + ("" if consistent else f" [INCONSISTENT: {consistency_detail}]"))
             if i + 1 < len(entries) and args.delay:
                 time.sleep(args.delay)
 

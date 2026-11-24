@@ -1,0 +1,7 @@
+digraph G {
+  node [];
+  edge [];
+  "VarNode{<org.owasp.benchmark.testcode.BenchmarkTest02511: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>/values}" [fillcolor=floralwhite,shape=box,style=filled];
+  "{ kind: \"call\", method: \"<javax.servlet.ServletRequest: java.lang.String[] getParameterValues(java.lang.String)>\", index: \"result\", type: \"java.lang.String[]\" }\n<org.owasp.benchmark.testcode.BenchmarkTest02511: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[5@L43] values = invokeinterface request.getParameterValues(%c12)/result" [fillcolor=gold,shape=doubleoctagon,style=filled];
+  "{ kind: \"call\", method: \"<javax.servlet.ServletRequest: java.lang.String[] getParameterValues(java.lang.String)>\", index: \"result\", type: \"java.lang.String[]\" }\n<org.owasp.benchmark.testcode.BenchmarkTest02511: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[5@L43] values = invokeinterface request.getParameterValues(%c12)/result" -> "VarNode{<org.owasp.benchmark.testcode.BenchmarkTest02511: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>/values}";
+}

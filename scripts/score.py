@@ -46,6 +46,8 @@ def load_ground_truth(csv_path):
         for row in csv.reader(f):
             if not row or row[0].startswith("#"):
                 continue
+            if row[0].strip().lower() == "test_name":
+                continue  # header row (sample_seed42.csv has one)
             name, _category, real, cwe = [c.strip() for c in row[:4]]
             truth[name] = (parse_bool(real, f"ground truth row {name}"), cwe)
     return truth

@@ -1,0 +1,7 @@
+digraph G {
+  node [];
+  edge [];
+  "VarNode{<org.owasp.benchmark.testcode.BenchmarkTest02204: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>/map}" [fillcolor=floralwhite,shape=box,style=filled];
+  "{ kind: \"call\", method: \"<javax.servlet.ServletRequest: java.util.Map getParameterMap()>\", index: \"result\", type: \"java.util.Map\" }\n<org.owasp.benchmark.testcode.BenchmarkTest02204: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[3@L43] map = invokeinterface request.getParameterMap()/result" [fillcolor=gold,shape=doubleoctagon,style=filled];
+  "{ kind: \"call\", method: \"<javax.servlet.ServletRequest: java.util.Map getParameterMap()>\", index: \"result\", type: \"java.util.Map\" }\n<org.owasp.benchmark.testcode.BenchmarkTest02204: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[3@L43] map = invokeinterface request.getParameterMap()/result" -> "VarNode{<org.owasp.benchmark.testcode.BenchmarkTest02204: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>/map}";
+}

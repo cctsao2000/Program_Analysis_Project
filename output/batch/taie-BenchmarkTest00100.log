@@ -1,0 +1,618 @@
++ java -Xmx4g -cp taie-release/tai-e-all-0.5.4.jar:plugin-classes pascal.taie.Main -cp benchmarkjava/target/classes:/Users/cctsao/.m2/repository/javax/javaee-api/8.0.1/javaee-api-8.0.1.jar:/Users/cctsao/.m2/repository/com/sun/mail/javax.mail/1.6.2/javax.mail-1.6.2.jar:/Users/cctsao/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/Users/cctsao/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/Users/cctsao/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar:/Users/cctsao/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.9/jaxb-impl-2.3.9.jar:/Users/cctsao/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.3/jakarta.xml.bind-api-2.3.3.jar:/Users/cctsao/.m2/repository/com/sun/activation/jakarta.activation/1.2.2/jakarta.activation-1.2.2.jar:/Users/cctsao/.m2/repository/com/sun/jersey/jersey-servlet/1.19.4/jersey-servlet-1.19.4.jar:/Users/cctsao/.m2/repository/com/sun/jersey/jersey-server/1.19.4/jersey-server-1.19.4.jar:/Users/cctsao/.m2/repository/com/sun/jersey/jersey-core/1.19.4/jersey-core-1.19.4.jar:/Users/cctsao/.m2/repository/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.jar:/Users/cctsao/.m2/repository/commons-codec/commons-codec/1.23.0/commons-codec-1.23.0.jar:/Users/cctsao/.m2/repository/commons-dbcp/commons-dbcp/1.4/commons-dbcp-1.4.jar:/Users/cctsao/.m2/repository/commons-pool/commons-pool/1.5.4/commons-pool-1.5.4.jar:/Users/cctsao/.m2/repository/commons-io/commons-io/2.22.0/commons-io-2.22.0.jar:/Users/cctsao/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar:/Users/cctsao/.m2/repository/org/slf4j/slf4j-reload4j/2.0.20/slf4j-reload4j-2.0.20.jar:/Users/cctsao/.m2/repository/org/slf4j/slf4j-api/2.0.20/slf4j-api-2.0.20.jar:/Users/cctsao/.m2/repository/ch/qos/reload4j/reload4j/1.2.22/reload4j-1.2.22.jar:/Users/cctsao/.m2/repository/org/apache/directory/api/api-ldap-model/2.1.7/api-ldap-model-2.1.7.jar:/Users/cctsao/.m2/repository/org/apache/directory/api/api-util/2.1.7/api-util-2.1.7.jar:/Users/cctsao/.m2/repository/org/apache/directory/api/api-asn1-api/2.1.7/api-asn1-api-2.1.7.jar:/Users/cctsao/.m2/repository/org/apache/directory/api/api-asn1-ber/2.1.7/api-asn1-ber-2.1.7.jar:/Users/cctsao/.m2/repository/org/apache/directory/api/api-i18n/2.1.7/api-i18n-2.1.7.jar:/Users/cctsao/.m2/repository/org/apache/mina/mina-core/2.2.3/mina-core-2.2.3.jar:/Users/cctsao/.m2/repository/org/apache/servicemix/bundles/org.apache.servicemix.bundles.antlr/2.7.7_5/org.apache.servicemix.bundles.antlr-2.7.7_5.jar:/Users/cctsao/.m2/repository/org/apache/commons/commons-lang3/3.15.0/commons-lang3-3.15.0.jar:/Users/cctsao/.m2/repository/org/apache/commons/commons-collections4/4.4/commons-collections4-4.4.jar:/Users/cctsao/.m2/repository/com/github/ben-manes/caffeine/caffeine/2.9.3/caffeine-2.9.3.jar:/Users/cctsao/.m2/repository/org/apache/directory/api/api-ldap-schema-data/2.1.9/api-ldap-schema-data-2.1.9.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-core/2.0.0.AM27/apacheds-core-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-i18n/2.0.0.AM27/apacheds-i18n-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-core-shared/2.0.0.AM27/apacheds-core-shared-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-interceptors-admin/2.0.0.AM27/apacheds-interceptors-admin-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-interceptors-authn/2.0.0.AM27/apacheds-interceptors-authn-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-interceptors-number/2.0.0.AM27/apacheds-interceptors-number-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-interceptors-authz/2.0.0.AM27/apacheds-interceptors-authz-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-interceptors-changelog/2.0.0.AM27/apacheds-interceptors-changelog-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-interceptors-collective/2.0.0.AM27/apacheds-interceptors-collective-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-interceptors-event/2.0.0.AM27/apacheds-interceptors-event-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-interceptors-exception/2.0.0.AM27/apacheds-interceptors-exception-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-interceptors-journal/2.0.0.AM27/apacheds-interceptors-journal-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-interceptors-normalization/2.0.0.AM27/apacheds-interceptors-normalization-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-interceptors-operational/2.0.0.AM27/apacheds-interceptors-operational-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-interceptors-referral/2.0.0.AM27/apacheds-interceptors-referral-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-interceptors-schema/2.0.0.AM27/apacheds-interceptors-schema-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-interceptors-subtree/2.0.0.AM27/apacheds-interceptors-subtree-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-interceptors-trigger/2.0.0.AM27/apacheds-interceptors-trigger-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/api/api-ldap-extras-trigger/2.1.5/api-ldap-extras-trigger-2.1.5.jar:/Users/cctsao/.m2/repository/org/apache/directory/api/api-ldap-codec-core/2.1.5/api-ldap-codec-core-2.1.5.jar:/Users/cctsao/.m2/repository/org/apache/directory/api/api-ldap-extras-util/2.1.5/api-ldap-extras-util-2.1.5.jar:/Users/cctsao/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.70/bcpkix-jdk15on-1.70.jar:/Users/cctsao/.m2/repository/org/bouncycastle/bcutil-jdk15on/1.70/bcutil-jdk15on-1.70.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-core-annotations/2.0.0.AM27/apacheds-core-annotations-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/mavibot/mavibot/1.0.0-M8/mavibot-1.0.0-M8.jar:/Users/cctsao/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-mavibot-partition/2.0.0.AM27/apacheds-mavibot-partition-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-core-api/2.0.0.AM27/apacheds-core-api-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/api/api-ldap-client-api/2.1.5/api-ldap-client-api-2.1.5.jar:/Users/cctsao/.m2/repository/org/apache/commons/commons-pool2/2.12.0/commons-pool2-2.12.0.jar:/Users/cctsao/.m2/repository/org/apache/directory/api/api-ldap-extras-aci/2.1.5/api-ldap-extras-aci-2.1.5.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-core-avl/2.0.0.AM27/apacheds-core-avl-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-core-constants/2.0.0.AM27/apacheds-core-constants-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-core-jndi/2.0.0.AM27/apacheds-core-jndi-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-interceptor-kerberos/2.0.0.AM27/apacheds-interceptor-kerberos-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-jdbm-partition/2.0.0.AM27/apacheds-jdbm-partition-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/jdbm/apacheds-jdbm1/2.0.0-M3/apacheds-jdbm1-2.0.0-M3.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-kerberos-codec/2.0.0.AM27/apacheds-kerberos-codec-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-ldif-partition/2.0.0.AM27/apacheds-ldif-partition-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-protocol-ldap/2.0.0.AM27/apacheds-protocol-ldap-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/api/api-ldap-extras-codec-api/2.1.5/api-ldap-extras-codec-api-2.1.5.jar:/Users/cctsao/.m2/repository/org/apache/directory/api/api-ldap-extras-codec/2.1.5/api-ldap-extras-codec-2.1.5.jar:/Users/cctsao/.m2/repository/org/apache/directory/api/api-ldap-extras-sp/2.1.5/api-ldap-extras-sp-2.1.5.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-protocol-shared/2.0.0.AM27/apacheds-protocol-shared-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-server-annotations/2.0.0.AM27/apacheds-server-annotations-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-server-jndi/2.0.0.AM27/apacheds-server-jndi-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-test-framework/2.0.0.AM27/apacheds-test-framework-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/directory/api/api-ldap-codec-standalone/2.1.5/api-ldap-codec-standalone-2.1.5.jar:/Users/cctsao/.m2/repository/org/apache/directory/api/api-ldap-net-mina/2.1.5/api-ldap-net-mina-2.1.5.jar:/Users/cctsao/.m2/repository/org/apache/directory/server/apacheds-xdbm-partition/2.0.0.AM27/apacheds-xdbm-partition-2.0.0.AM27.jar:/Users/cctsao/.m2/repository/org/apache/httpcomponents/client5/httpclient5/5.6.5/httpclient5-5.6.5.jar:/Users/cctsao/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.4.4/httpcore5-h2-5.4.4.jar:/Users/cctsao/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.5/httpcore5-5.5.jar:/Users/cctsao/.m2/repository/org/bouncycastle/bcprov-jdk15on/1.70/bcprov-jdk15on-1.70.jar:/Users/cctsao/.m2/repository/org/hibernate/hibernate-core/3.6.10.Final/hibernate-core-3.6.10.Final.jar:/Users/cctsao/.m2/repository/antlr/antlr/2.7.6/antlr-2.7.6.jar:/Users/cctsao/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar:/Users/cctsao/.m2/repository/org/hibernate/hibernate-commons-annotations/3.2.0.Final/hibernate-commons-annotations-3.2.0.Final.jar:/Users/cctsao/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.0-api/1.0.1.Final/hibernate-jpa-2.0-api-1.0.1.Final.jar:/Users/cctsao/.m2/repository/javax/transaction/jta/1.1/jta-1.1.jar:/Users/cctsao/.m2/repository/org/hibernate/hibernate-entitymanager/3.6.10.Final/hibernate-entitymanager-3.6.10.Final.jar:/Users/cctsao/.m2/repository/cglib/cglib/2.2/cglib-2.2.jar:/Users/cctsao/.m2/repository/asm/asm/3.1/asm-3.1.jar:/Users/cctsao/.m2/repository/javassist/javassist/3.12.0.GA/javassist-3.12.0.GA.jar:/Users/cctsao/.m2/repository/org/hsqldb/hsqldb/2.7.4/hsqldb-2.7.4.jar:/Users/cctsao/.m2/repository/org/owasp/esapi/esapi/2.7.0.0/esapi-2.7.0.0.jar:/Users/cctsao/.m2/repository/xom/xom/1.3.9/xom-1.3.9.jar:/Users/cctsao/.m2/repository/commons-beanutils/commons-beanutils/1.11.0/commons-beanutils-1.11.0.jar:/Users/cctsao/.m2/repository/commons-logging/commons-logging/1.3.5/commons-logging-1.3.5.jar:/Users/cctsao/.m2/repository/commons-configuration/commons-configuration/1.10/commons-configuration-1.10.jar:/Users/cctsao/.m2/repository/commons-fileupload/commons-fileupload/1.6.0/commons-fileupload-1.6.0.jar:/Users/cctsao/.m2/repository/org/apache-extras/beanshell/bsh/2.0b6/bsh-2.0b6.jar:/Users/cctsao/.m2/repository/org/owasp/antisamy/antisamy/1.7.8/antisamy-1.7.8.jar:/Users/cctsao/.m2/repository/org/apache/xmlgraphics/batik-css/1.19/batik-css-1.19.jar:/Users/cctsao/.m2/repository/org/apache/xmlgraphics/batik-shared-resources/1.19/batik-shared-resources-1.19.jar:/Users/cctsao/.m2/repository/org/apache/xmlgraphics/batik-util/1.19/batik-util-1.19.jar:/Users/cctsao/.m2/repository/org/apache/xmlgraphics/batik-constants/1.19/batik-constants-1.19.jar:/Users/cctsao/.m2/repository/org/apache/xmlgraphics/batik-i18n/1.19/batik-i18n-1.19.jar:/Users/cctsao/.m2/repository/org/apache/xmlgraphics/xmlgraphics-commons/2.11/xmlgraphics-commons-2.11.jar:/Users/cctsao/.m2/repository/org/htmlunit/neko-htmlunit/4.11.0/neko-htmlunit-4.11.0.jar:/Users/cctsao/.m2/repository/xerces/xercesImpl/2.12.2/xercesImpl-2.12.2.jar:/Users/cctsao/.m2/repository/xml-apis/xml-apis-ext/1.3.04/xml-apis-ext-1.3.04.jar:/Users/cctsao/.m2/repository/org/springframework/spring-context/5.3.39/spring-context-5.3.39.jar:/Users/cctsao/.m2/repository/org/springframework/spring-aop/5.3.39/spring-aop-5.3.39.jar:/Users/cctsao/.m2/repository/org/springframework/spring-beans/5.3.39/spring-beans-5.3.39.jar:/Users/cctsao/.m2/repository/org/springframework/spring-core/5.3.39/spring-core-5.3.39.jar:/Users/cctsao/.m2/repository/org/springframework/spring-jcl/5.3.39/spring-jcl-5.3.39.jar:/Users/cctsao/.m2/repository/org/springframework/spring-expression/5.3.39/spring-expression-5.3.39.jar:/Users/cctsao/.m2/repository/org/springframework/spring-jdbc/5.3.39/spring-jdbc-5.3.39.jar:/Users/cctsao/.m2/repository/org/springframework/spring-tx/5.3.39/spring-tx-5.3.39.jar:/Users/cctsao/.m2/repository/org/springframework/spring-web/5.3.39/spring-web-5.3.39.jar:/Users/cctsao/.m2/repository/org/springframework/spring-webmvc/5.3.39/spring-webmvc-5.3.39.jar:/Users/cctsao/.m2/repository/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar:/Users/cctsao/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.23.0/jackson-databind-2.23.0.jar:/Users/cctsao/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.23/jackson-annotations-2.23.jar:/Users/cctsao/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.23.0/jackson-core-2.23.0.jar:/Users/cctsao/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.14.4/junit-jupiter-api-5.14.4.jar:/Users/cctsao/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/cctsao/.m2/repository/org/junit/platform/junit-platform-commons/1.14.4/junit-platform-commons-1.14.4.jar:/Users/cctsao/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/cctsao/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.14.4/junit-jupiter-params-5.14.4.jar --input-classes org.owasp.benchmark.testcode.BenchmarkTest00100 -java 17 --jre-dir /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home -a pta=reflection-inference:null;taint-config:configs/;plugins:[cs6215.BenchmarkEntryPointPlugin] --output-dir output/batch/taie-BenchmarkTest00100
+[Tai-e] starts ...
+Output directory: /Users/cctsao/Documents/GitHub/Program_Analysis_Project/output/batch/taie-BenchmarkTest00100
+Writing options to /Users/cctsao/Documents/GitHub/Program_Analysis_Project/output/batch/taie-BenchmarkTest00100/options.yml
+Writing log to /Users/cctsao/Documents/GitHub/Program_Analysis_Project/output/batch/taie-BenchmarkTest00100/tai-e.log
+java.version: 17.0.21.1
+java.version.date: 2026-11-17
+java.runtime.version: 17.0.21.1+0
+java.vendor: Homebrew
+java.vendor.version: Homebrew
+os.name: Mac OS X
+os.version: 14.5
+os.arch: aarch64
+Available CPU cores: 10
+Total memory: 16384MB
+Tai-e Version: 0.5.4
+Tai-e Commit: 6474e7da62fb1f3b692331040e66692cbf4d630d
+Writing analysis plan to /Users/cctsao/Documents/GitHub/Program_Analysis_Project/output/batch/taie-BenchmarkTest00100/tai-e-plan.yml
+[WorldBuilder] starts ...
+Duplicate classes (total 224) introduced by org.apache.servicemix.bundles.antlr-2.7.7_5.jar and antlr-2.7.6.jar,
+[antlr.collections.AST, antlr.TokenStreamRewriteEngine$ReplaceOp, antlr.TokenStreamRewriteEngine$1, antlr.DefaultFileLineFormatter] ... (220 more) is founded in both containers
+Duplicate classes (total 15) introduced by javaee-api-8.0.1.jar and jta-1.1.jar,
+[javax.transaction.Transaction, javax.transaction.TransactionRequiredException, javax.transaction.HeuristicRollbackException, javax.transaction.UserTransaction] ... (11 more) is founded in both containers
+Duplicate classes (total 3) introduced by jta-1.1.jar and java.transaction.xa,
+[javax.transaction.xa.XAException, javax.transaction.xa.XAResource, javax.transaction.xa.Xid] is founded in both containers
+Duplicate classes (total 4) introduced by commons-logging-1.3.5.jar and spring-jcl-5.3.39.jar,
+[org.apache.commons.logging.Log, org.apache.commons.logging.LogFactory, org.apache.commons.logging.impl.NoOpLog, org.apache.commons.logging.impl.SimpleLog] is founded in both containers
+Duplicate classes (total 38) introduced by activation-1.1.jar and jakarta.activation-1.2.2.jar,
+[javax.activation.DataContentHandlerFactory, com.sun.activation.viewers.TextEditor, com.sun.activation.registries.MailcapParseException, javax.activation.ActivationDataFlavor] ... (34 more) is founded in both containers
+Duplicate classes (total 88) introduced by xml-apis-1.4.01.jar and jdk.xml.dom,
+[org.w3c.dom.html.HTMLBRElement, org.w3c.dom.html.HTMLFormElement, org.w3c.dom.html.HTMLFieldSetElement, org.w3c.dom.html.HTMLIFrameElement] ... (84 more) is founded in both containers
+Duplicate classes (total 174) introduced by javaee-api-8.0.1.jar and hibernate-jpa-2.0-api-1.0.1.Final.jar,
+[javax.persistence.PrePersist, javax.persistence.spi.LoadState, javax.persistence.MappedSuperclass, javax.persistence.criteria.CriteriaBuilder$Case] ... (170 more) is founded in both containers
+Duplicate classes (total 200) introduced by xml-apis-1.4.01.jar and java.xml,
+[javax.xml.stream.util.StreamReaderDelegate, org.w3c.dom.DOMImplementationSource, org.w3c.dom.Text, org.w3c.dom.views.DocumentView] ... (196 more) is founded in both containers
+Duplicate classes (total 1) introduced by xercesImpl-2.12.2.jar and jdk.xml.dom,
+[org.w3c.dom.html.HTMLDOMImplementation] is founded in both containers
+Duplicate classes (total 4) introduced by javax.activation-api-1.2.0.jar and jakarta.activation-1.2.2.jar,
+[javax.activation.CommandInfo$Beans, javax.activation.MimetypesFileTypeMap$1, javax.activation.MailcapCommandMap$1, javax.activation.CommandInfo$Beans$1] is founded in both containers
+Duplicate classes (total 140) introduced by javaee-api-8.0.1.jar and javax.mail-1.6.2.jar,
+[javax.mail.EventQueue$QueueElement, javax.mail.internet.ParameterList$ToStringBuffer, javax.mail.util.ByteArrayDataSource, javax.mail.search.FromStringTerm] ... (136 more) is founded in both containers
+Duplicate classes (total 27) introduced by activation-1.1.jar and javax.activation-api-1.2.0.jar,
+[javax.activation.DataContentHandlerFactory, javax.activation.ActivationDataFlavor, javax.activation.DataSourceDataContentHandler, javax.activation.SecuritySupport$2] ... (23 more) is founded in both containers
+Duplicate classes (total 111) introduced by jaxb-api-2.3.1.jar and jakarta.xml.bind-api-2.3.3.jar,
+[javax.xml.bind.Element, javax.xml.bind.annotation.XmlAccessOrder, javax.xml.bind.MarshalException, javax.xml.bind.annotation.XmlElement$DEFAULT] ... (107 more) is founded in both containers
+Duplicate classes (total 54) introduced by javaee-api-8.0.1.jar and jsr311-api-1.1.1.jar,
+[javax.ws.rs.Encoded, javax.ws.rs.Produces, javax.ws.rs.ext.Provider, javax.ws.rs.Path] ... (50 more) is founded in both containers
+
+Cannot resolve class javax.annotation.Nonnull; treating it as phantom class.
+Cannot resolve class kotlin.reflect.KType; treating it as phantom class.
+Cannot resolve class kotlin.reflect.KProperty; treating it as phantom class.
+Cannot resolve class kotlin.reflect.jvm.ReflectJvmMapping; treating it as phantom class.
+Cannot resolve class org.jaxen.VariableContext; treating it as phantom class.
+Cannot resolve class kotlin.reflect.KParameter; treating it as phantom class.
+Cannot resolve class kotlin.reflect.KFunction; treating it as phantom class.
+Cannot resolve class kotlin.reflect.KParameter$Kind; treating it as phantom class.
+Cannot resolve class org.jaxen.FunctionContext; treating it as phantom class.
+Cannot resolve class kotlin.Unit; treating it as phantom class.
+Cannot resolve class org.jaxen.NamespaceContext; treating it as phantom class.
+Cannot resolve class org.jaxen.dom4j.Dom4jXPath; treating it as phantom class.
+Cannot resolve class org.jaxen.JaxenException; treating it as phantom class.
+Cannot resolve class org.jaxen.Context; treating it as phantom class.
+Cannot resolve class org.jaxen.SimpleVariableContext; treating it as phantom class.
+Cannot resolve class org.jaxen.XPath; treating it as phantom class.
+Cannot resolve class org.jaxen.SimpleNamespaceContext; treating it as phantom class.
+Cannot resolve class org.jaxen.saxpath.SAXPathException; treating it as phantom class.
+Cannot resolve class org.jaxen.ContextSupport; treating it as phantom class.
+Cannot resolve class org.jaxen.pattern.Pattern; treating it as phantom class.
+Cannot resolve class org.jaxen.Navigator; treating it as phantom class.
+Cannot resolve class org.jaxen.dom4j.DocumentNavigator; treating it as phantom class.
+Cannot resolve class org.jaxen.XPathFunctionContext; treating it as phantom class.
+Cannot resolve class org.jaxen.pattern.PatternParser; treating it as phantom class.
+Cannot resolve class kotlin.reflect.KClass; treating it as phantom class.
+Cannot resolve class kotlin.jvm.JvmClassMappingKt; treating it as phantom class.
+Cannot resolve class kotlin.reflect.KCallable; treating it as phantom class.
+Cannot resolve class kotlin.reflect.full.KClasses; treating it as phantom class.
+Cannot resolve class kotlin.reflect.jvm.KCallablesJvm; treating it as phantom class.
+Cannot resolve class org.objectweb.asm.util.TraceClassVisitor; treating it as phantom class.
+Cannot resolve class javax.annotation.Nullable; treating it as phantom class.
+Warning: main class was not given!
+13658 classes with 129349 methods in the world
+[WorldBuilder] elapsed time: 0.86s; CPU usage: start 20.99%, peak 12.63%, end 65.99%; Memory usage: start 43MB, peak 43MB, end 300MB
+[pta] starts ...
+Loading taint config from /Users/cctsao/Documents/GitHub/Program_Analysis_Project/configs
+Cannot find source method '<javax.servlet.ServletRequestWrapper: java.lang.String getContentType()>'
+Cannot find source method '<javax.servlet.ServletRequestWrapper: java.lang.String getLocalName()>'
+Cannot find source method '<javax.servlet.ServletRequestWrapper: java.lang.String getParameter(java.lang.String)>'
+Cannot find source method '<javax.servlet.ServletRequestWrapper: java.util.Map getParameterMap()>'
+Cannot find source method '<javax.servlet.ServletRequestWrapper: java.util.Enumeration getParameterNames()>'
+Cannot find source method '<javax.servlet.ServletRequestWrapper: java.lang.String[] getParameterValues(java.lang.String)>'
+Cannot find source method '<javax.servlet.ServletRequestWrapper: java.lang.String getRemoteHost()>'
+Cannot find source method '<javax.servlet.ServletRequestWrapper: java.lang.String getServerName()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getContentType()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: javax.servlet.http.Cookie[] getCookies()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getHeader(java.lang.String)>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.util.Enumeration getHeaderNames()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.util.Enumeration getHeaders(java.lang.String)>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getLocalName()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getParameter(java.lang.String)>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.util.Map getParameterMap()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.util.Enumeration getParameterNames()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.String[] getParameterValues(java.lang.String)>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getPathInfo()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getPathTranslated()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getQueryString()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getRemoteHost()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getRemoteUser()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getRequestURI()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.StringBuffer getRequestURL()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getServerName()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getServletPath()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequest: java.lang.String getContentType()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequest: java.lang.String getLocalName()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>'
+Cannot find source method '<javax.servlet.http.HttpServletRequest: java.util.Map getParameterMap()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequest: java.util.Enumeration getParameterNames()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequest: java.lang.String[] getParameterValues(java.lang.String)>'
+Cannot find source method '<javax.servlet.http.HttpServletRequest: java.lang.String getRemoteHost()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequest: java.lang.String getServerName()>'
+Cannot find sink method '<javax.activation.FileDataSource: void <init>(java.lang.String)>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: void write(java.lang.String)>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: void write(java.lang.String,int,int)>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: void write(char[])>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: void write(char[],int,int)>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: java.io.PrintWriter append(java.lang.CharSequence)>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: java.io.PrintWriter append(java.lang.CharSequence,int,int)>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: java.io.PrintWriter append(char)>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: void print(char[])>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: void print(java.lang.String)>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: void print(java.lang.Object)>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: void print(char)>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: void println(char[])>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: void println(java.lang.String)>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: void println(java.lang.Object)>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: void println(char)>'
+Cannot find sink method '<org.springframework.jdbc.core.JdbcTemplate: int batchUpdate(java.lang.String)>'
+Cannot find sink method '<org.springframework.jdbc.core.JdbcTemplate: long queryForLong(java.lang.String)>'
+Cannot find sink method '<org.springframework.jdbc.core.JdbcTemplate: int queryForInt(java.lang.String)>'
+TaintConfig:
+sources:
+  - { kind: "call", method: "<javax.servlet.http.Cookie: java.lang.String getComment()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.http.Cookie: java.lang.String getDomain()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.http.Cookie: java.lang.String getName()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.http.Cookie: java.lang.String getPath()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.http.Cookie: java.lang.String getValue()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.http.HttpServletRequest: javax.servlet.http.Cookie[] getCookies()>", index: "result", type: "javax.servlet.http.Cookie[]" }
+  - { kind: "call", method: "<javax.servlet.http.HttpServletRequest: java.lang.String getHeader(java.lang.String)>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.http.HttpServletRequest: java.util.Enumeration getHeaderNames()>", index: "result", type: "java.util.Enumeration" }
+  - { kind: "call", method: "<javax.servlet.http.HttpServletRequest: java.util.Enumeration getHeaders(java.lang.String)>", index: "result", type: "java.util.Enumeration" }
+  - { kind: "call", method: "<javax.servlet.http.HttpServletRequest: java.lang.String getPathInfo()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.http.HttpServletRequest: java.lang.String getPathTranslated()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.http.HttpServletRequest: java.lang.String getQueryString()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.http.HttpServletRequest: java.lang.String getRemoteUser()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.http.HttpServletRequest: java.lang.String getRequestURI()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.http.HttpServletRequest: java.lang.StringBuffer getRequestURL()>", index: "result", type: "java.lang.StringBuffer" }
+  - { kind: "call", method: "<javax.servlet.http.HttpServletRequest: java.lang.String getServletPath()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.ServletRequest: java.lang.String getContentType()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.ServletRequest: java.lang.String getLocalName()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.ServletRequest: java.lang.String getParameter(java.lang.String)>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.ServletRequest: java.util.Map getParameterMap()>", index: "result", type: "java.util.Map" }
+  - { kind: "call", method: "<javax.servlet.ServletRequest: java.util.Enumeration getParameterNames()>", index: "result", type: "java.util.Enumeration" }
+  - { kind: "call", method: "<javax.servlet.ServletRequest: java.lang.String[] getParameterValues(java.lang.String)>", index: "result", type: "java.lang.String[]" }
+  - { kind: "call", method: "<javax.servlet.ServletRequest: java.lang.String getRemoteHost()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.ServletRequest: java.lang.String getServerName()>", index: "result", type: "java.lang.String" }
+
+sinks:
+  - { method: "<java.io.File: void <init>(java.lang.String)>", index: "0" }
+  - { method: "<java.io.File: void <init>(java.lang.String,java.lang.String)>", index: "0" }
+  - { method: "<java.io.File: void <init>(java.lang.String,java.lang.String)>", index: "1" }
+  - { method: "<java.io.File: void <init>(java.io.File,java.lang.String)>", index: "0" }
+  - { method: "<java.io.File: void <init>(java.net.URI)>", index: "0" }
+  - { method: "<java.io.RandomAccessFile: void <init>(java.lang.String,java.lang.String)>", index: "1" }
+  - { method: "<java.io.FileReader: void <init>(java.lang.String)>", index: "0" }
+  - { method: "<java.io.FileInputStream: void <init>(java.lang.String)>", index: "0" }
+  - { method: "<java.nio.file.Paths: java.nio.file.Path get(java.lang.String,java.lang.String[])>", index: "0" }
+  - { method: "<java.nio.file.Paths: java.nio.file.Path get(java.lang.String,java.lang.String[])>", index: "1" }
+  - { method: "<java.nio.file.Paths: java.nio.file.Path get(java.net.URI)>", index: "0" }
+  - { method: "<java.io.File: java.io.File createTempFile(java.lang.String,java.lang.String)>", index: "0" }
+  - { method: "<java.io.File: java.io.File createTempFile(java.lang.String,java.lang.String)>", index: "1" }
+  - { method: "<java.io.File: java.io.File createTempFile(java.lang.String,java.lang.String,java.io.File)>", index: "0" }
+  - { method: "<java.io.File: java.io.File createTempFile(java.lang.String,java.lang.String,java.io.File)>", index: "1" }
+  - { method: "<java.io.File: java.io.File createTempFile(java.lang.String,java.lang.String,java.io.File)>", index: "2" }
+  - { method: "<java.nio.file.Files: java.nio.file.Path createTempFile(java.nio.file.Path,java.lang.String,java.lang.String,java.nio.file.attribute.FileAttribute[])>", index: "1" }
+  - { method: "<java.nio.file.Files: java.nio.file.Path createTempFile(java.nio.file.Path,java.lang.String,java.lang.String,java.nio.file.attribute.FileAttribute[])>", index: "2" }
+  - { method: "<java.nio.file.Files: java.nio.file.Path createTempFile(java.lang.String,java.lang.String,java.nio.file.attribute.FileAttribute[])>", index: "1" }
+  - { method: "<java.nio.file.Files: java.nio.file.Path createTempFile(java.lang.String,java.lang.String,java.nio.file.attribute.FileAttribute[])>", index: "2" }
+  - { method: "<java.nio.file.Files: java.nio.file.Path createTempDirectory(java.nio.file.Path,java.lang.String,java.nio.file.attribute.FileAttribute[])>", index: "1" }
+  - { method: "<java.nio.file.Files: java.nio.file.Path createTempDirectory(java.lang.String,java.nio.file.attribute.FileAttribute[])>", index: "1" }
+  - { method: "<java.io.FileWriter: void <init>(java.lang.String)>", index: "0" }
+  - { method: "<java.io.FileWriter: void <init>(java.lang.String,boolean)>", index: "1" }
+  - { method: "<java.io.FileOutputStream: void <init>(java.lang.String)>", index: "0" }
+  - { method: "<java.io.FileOutputStream: void <init>(java.lang.String,boolean)>", index: "1" }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String)>", index: "0" }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String[])>", index: "0" }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String,java.lang.String[])>", index: "0" }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String,java.lang.String[])>", index: "1" }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String[],java.lang.String[])>", index: "0" }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String[],java.lang.String[])>", index: "1" }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String,java.lang.String[],java.io.File)>", index: "1" }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String,java.lang.String[],java.io.File)>", index: "2" }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String[],java.lang.String[],java.io.File)>", index: "1" }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String[],java.lang.String[],java.io.File)>", index: "2" }
+  - { method: "<java.lang.ProcessBuilder: void <init>(java.lang.String[])>", index: "0" }
+  - { method: "<java.lang.ProcessBuilder: void <init>(java.util.List)>", index: "0" }
+  - { method: "<java.lang.ProcessBuilder: java.lang.ProcessBuilder command(java.lang.String[])>", index: "0" }
+  - { method: "<java.lang.ProcessBuilder: java.lang.ProcessBuilder command(java.util.List)>", index: "0" }
+  - { method: "<javax.servlet.http.HttpServletResponse: void sendError(int,java.lang.String)>", index: "0" }
+  - { method: "<javax.servlet.http.HttpServletResponse: void setStatus(int,java.lang.String)>", index: "0" }
+  - { method: "<javax.servlet.http.HttpServletResponseWrapper: void sendError(int,java.lang.String)>", index: "0" }
+  - { method: "<javax.servlet.http.HttpServletResponseWrapper: void setStatus(int,java.lang.String)>", index: "0" }
+  - { method: "<javax.servlet.ServletOutputStream: void print(java.lang.String)>", index: "0" }
+  - { method: "<javax.servlet.ServletOutputStream: void println(java.lang.String)>", index: "0" }
+  - { method: "<java.io.PrintWriter: void write(java.lang.String)>", index: "0" }
+  - { method: "<java.io.PrintWriter: void write(java.lang.String,int,int)>", index: "2" }
+  - { method: "<java.io.PrintWriter: void write(char[])>", index: "0" }
+  - { method: "<java.io.PrintWriter: void write(char[],int,int)>", index: "2" }
+  - { method: "<java.io.PrintWriter: void print(char[])>", index: "0" }
+  - { method: "<java.io.PrintWriter: void print(java.lang.String)>", index: "0" }
+  - { method: "<java.io.PrintWriter: void print(java.lang.Object)>", index: "0" }
+  - { method: "<java.io.PrintWriter: void print(char)>", index: "0" }
+  - { method: "<java.io.PrintWriter: void println(char[])>", index: "0" }
+  - { method: "<java.io.PrintWriter: void println(java.lang.String)>", index: "0" }
+  - { method: "<java.io.PrintWriter: void println(java.lang.Object)>", index: "0" }
+  - { method: "<java.io.PrintWriter: void println(char)>", index: "0" }
+  - { method: "<java.io.PrintWriter: java.io.PrintWriter printf(java.util.Locale,java.lang.String,java.lang.Object[])>", index: "0" }
+  - { method: "<java.io.PrintWriter: java.io.PrintWriter printf(java.util.Locale,java.lang.String,java.lang.Object[])>", index: "1" }
+  - { method: "<java.io.PrintWriter: java.io.PrintWriter printf(java.lang.String,java.lang.Object[])>", index: "0" }
+  - { method: "<java.io.PrintWriter: java.io.PrintWriter printf(java.lang.String,java.lang.Object[])>", index: "1" }
+  - { method: "<java.io.PrintWriter: java.io.PrintWriter append(java.lang.CharSequence)>", index: "0" }
+  - { method: "<java.io.PrintWriter: java.io.PrintWriter append(java.lang.CharSequence,int,int)>", index: "2" }
+  - { method: "<java.io.PrintWriter: java.io.PrintWriter append(char)>", index: "0" }
+  - { method: "<java.io.PrintStream: java.io.PrintStream printf(java.lang.String,java.lang.Object[])>", index: "1" }
+  - { method: "<java.io.PrintStream: java.io.PrintStream printf(java.util.Locale,java.lang.String,java.lang.Object[])>", index: "1" }
+  - { method: "<java.sql.Statement: java.sql.ResultSet executeQuery(java.lang.String)>", index: "0" }
+  - { method: "<java.sql.Statement: boolean execute(java.lang.String)>", index: "0" }
+  - { method: "<java.sql.Statement: boolean execute(java.lang.String,int)>", index: "0" }
+  - { method: "<java.sql.Statement: boolean execute(java.lang.String,int[])>", index: "0" }
+  - { method: "<java.sql.Statement: boolean execute(java.lang.String,java.lang.String[])>", index: "0" }
+  - { method: "<java.sql.Statement: int executeUpdate(java.lang.String)>", index: "0" }
+  - { method: "<java.sql.Statement: int executeUpdate(java.lang.String,int)>", index: "0" }
+  - { method: "<java.sql.Statement: int executeUpdate(java.lang.String,int[])>", index: "0" }
+  - { method: "<java.sql.Statement: int executeUpdate(java.lang.String,java.lang.String[])>", index: "0" }
+  - { method: "<java.sql.Statement: long executeLargeUpdate(java.lang.String)>", index: "0" }
+  - { method: "<java.sql.Statement: long executeLargeUpdate(java.lang.String,int)>", index: "0" }
+  - { method: "<java.sql.Statement: long executeLargeUpdate(java.lang.String,int[])>", index: "0" }
+  - { method: "<java.sql.Statement: long executeLargeUpdate(java.lang.String,java.lang.String[])>", index: "0" }
+  - { method: "<java.sql.Statement: void addBatch(java.lang.String)>", index: "0" }
+  - { method: "<java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String)>", index: "0" }
+  - { method: "<java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String,int)>", index: "0" }
+  - { method: "<java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String,int[])>", index: "0" }
+  - { method: "<java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String,java.lang.String[])>", index: "0" }
+  - { method: "<java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String,int,int)>", index: "0" }
+  - { method: "<java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String,int,int,int)>", index: "0" }
+  - { method: "<java.sql.Connection: java.sql.CallableStatement prepareCall(java.lang.String)>", index: "0" }
+  - { method: "<java.sql.Connection: java.sql.CallableStatement prepareCall(java.lang.String,int,int)>", index: "0" }
+  - { method: "<java.sql.Connection: java.sql.CallableStatement prepareCall(java.lang.String,int,int,int)>", index: "0" }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: int update(java.lang.String)>", index: "0" }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: int[] batchUpdate(java.lang.String[])>", index: "0" }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: void execute(java.lang.String)>", index: "0" }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: java.lang.Object queryForObject(java.lang.String,java.lang.Class)>", index: "0" }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: java.util.List queryForList(java.lang.String)>", index: "0" }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: java.util.List queryForList(java.lang.String,java.lang.Class)>", index: "0" }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: java.util.Map queryForMap(java.lang.String)>", index: "0" }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: org.springframework.jdbc.support.rowset.SqlRowSet queryForRowSet(java.lang.String)>", index: "0" }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: java.lang.Object query(java.lang.String,org.springframework.jdbc.core.ResultSetExtractor)>", index: "0" }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: void query(java.lang.String,org.springframework.jdbc.core.RowCallbackHandler)>", index: "0" }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: java.util.List query(java.lang.String,org.springframework.jdbc.core.RowMapper)>", index: "0" }
+
+transfers:
+  - { method: "<java.lang.String: void <init>(byte[])>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: void <init>(byte[],int)>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: void <init>(byte[],int,int)>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: void <init>(byte[],int,int,int)>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: void <init>(byte[],int,int,java.lang.String)>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: void <init>(byte[],int,int,java.nio.charset.Charset)>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: void <init>(byte[],java.lang.String)>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: void <init>(byte[],java.nio.charset.Charset)>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: void <init>(char[])>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: void <init>(char[],int,int)>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: void <init>(int[],int,int)>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: void <init>(java.lang.String)>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: void <init>(java.lang.StringBuilder)>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: void <init>(java.lang.StringBuffer)>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: char charAt(int)>", from: "base", to: "result", type: "char" }
+  - { method: "<java.lang.String: int codePointAt(int)>", from: "base", to: "result", type: "int" }
+  - { method: "<java.lang.String: int codePointBefore(int)>", from: "base", to: "result", type: "int" }
+  - { method: "<java.lang.String: java.lang.String concat(java.lang.String)>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String copyValueOf(char[])>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String copyValueOf(char[],int,int)>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String format(java.util.Locale,java.lang.String,java.lang.Object[])>", from: "1", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String format(java.util.Locale,java.lang.String,java.lang.Object[])>", from: "2[*]", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>", from: "1[*]", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: byte[] getBytes()>", from: "base", to: "result", type: "byte[]" }
+  - { method: "<java.lang.String: byte[] getBytes(java.nio.charset.Charset)>", from: "base", to: "result", type: "byte[]" }
+  - { method: "<java.lang.String: void getBytes(int,int,byte[],int)>", from: "base", to: "2", type: "byte[]" }
+  - { method: "<java.lang.String: byte[] getBytes(java.lang.String)>", from: "base", to: "result", type: "byte[]" }
+  - { method: "<java.lang.String: void getChars(int,int,char[],int)>", from: "base", to: "2", type: "char[]" }
+  - { method: "<java.lang.String: java.lang.String intern()>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String join(java.lang.CharSequence,java.lang.CharSequence[])>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String join(java.lang.CharSequence,java.lang.CharSequence[])>", from: "1[*]", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String join(java.lang.CharSequence,java.lang.Iterable)>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String join(java.lang.CharSequence,java.lang.Iterable)>", from: "1", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String replace(char,char)>", from: "1", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String replace(char,char)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>", from: "1", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>", from: "1", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String replaceFirst(java.lang.String,java.lang.String)>", from: "1", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String replaceFirst(java.lang.String,java.lang.String)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String[] split(java.lang.String)>", from: "base", to: "result[*]", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String[] split(java.lang.String,int)>", from: "base", to: "result[*]", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.CharSequence subSequence(int,int)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String substring(int)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String substring(int,int)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: char[] toCharArray()>", from: "base", to: "result", type: "char[]" }
+  - { method: "<java.lang.String: java.lang.String toLowerCase()>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String toLowerCase(java.util.Locale)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String toUpperCase()>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String toUpperCase(java.util.Locale)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String trim()>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String valueOf(boolean)>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String valueOf(char)>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String valueOf(char[])>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String valueOf(char[],int,int)>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String valueOf(double)>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String valueOf(float)>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String valueOf(int)>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String valueOf(long)>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String valueOf(java.lang.Object)>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.StringBuffer: void <init>(java.lang.String)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: void <init>(java.lang.CharSequence)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(boolean)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(char)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(int)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(long)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(char[])>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(char[],int,int)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(double)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(float)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.CharSequence)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.CharSequence,int,int)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.StringBuffer)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer appendCodePoint(int)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: char charAt(int)>", from: "base", to: "result", type: "char" }
+  - { method: "<java.lang.StringBuffer: void getChars(int,int,char[],int)>", from: "base", to: "2", type: "char[]" }
+  - { method: "<java.lang.StringBuffer: int codePointAt(int)>", from: "base", to: "result", type: "int" }
+  - { method: "<java.lang.StringBuffer: int codePointBefore(int)>", from: "base", to: "result", type: "int" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer insert(int,boolean)>", from: "1", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer insert(int,char)>", from: "1", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer insert(int,char[])>", from: "1", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer insert(int,char[],int,int)>", from: "1", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer insert(int,double)>", from: "1", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer insert(int,float)>", from: "1", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer insert(int,int)>", from: "1", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer insert(int,long)>", from: "1", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer insert(int,java.lang.CharSequence)>", from: "1", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer insert(int,java.lang.CharSequence,int,int)>", from: "1", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer insert(int,java.lang.Object)>", from: "1", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer insert(int,java.lang.String)>", from: "1", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer replace(int,int,java.lang.String)>", from: "2", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: void setCharAt(int,char)>", from: "1", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.CharSequence subSequence(int,int)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.StringBuffer: java.lang.String substring(int)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.StringBuffer: java.lang.String substring(int,int)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.StringBuffer: java.lang.String toString()>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.StringBuilder: void <init>(java.lang.String)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: void <init>(java.lang.CharSequence)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder append(int)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder append(long)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder append(char[])>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder append(char[],int,int)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder append(double)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder append(float)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.CharSequence)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.CharSequence,int,int)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.StringBuffer)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder appendCodePoint(int)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: char charAt(int)>", from: "base", to: "result", type: "char" }
+  - { method: "<java.lang.StringBuilder: void getChars(int,int,char[],int)>", from: "base", to: "2", type: "char[]" }
+  - { method: "<java.lang.StringBuilder: int codePointAt(int)>", from: "base", to: "result", type: "int" }
+  - { method: "<java.lang.StringBuilder: int codePointBefore(int)>", from: "base", to: "result", type: "int" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder insert(int,boolean)>", from: "1", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder insert(int,char)>", from: "1", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder insert(int,char[])>", from: "1", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder insert(int,char[],int,int)>", from: "1", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder insert(int,double)>", from: "1", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder insert(int,float)>", from: "1", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder insert(int,int)>", from: "1", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder insert(int,long)>", from: "1", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder insert(int,java.lang.CharSequence)>", from: "1", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder insert(int,java.lang.CharSequence,int,int)>", from: "1", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder insert(int,java.lang.Object)>", from: "1", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder insert(int,java.lang.String)>", from: "1", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder replace(int,int,java.lang.String)>", from: "2", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: void setCharAt(int,char)>", from: "1", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.CharSequence subSequence(int,int)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.StringBuilder: java.lang.String substring(int)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.StringBuilder: java.lang.String substring(int,int)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.StringBuilder: java.lang.String toString()>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String concat(java.lang.String)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.AbstractStringBuilder: java.lang.AbstractStringBuilder append(java.lang.Object)>", from: "0", to: "base", type: "java.lang.AbstractStringBuilder" }
+  - { method: "<java.lang.AbstractStringBuilder: java.lang.AbstractStringBuilder append(java.lang.String)>", from: "0", to: "base", type: "java.lang.AbstractStringBuilder" }
+  - { method: "<java.lang.AbstractStringBuilder: java.lang.AbstractStringBuilder append(java.lang.StringBuffer)>", from: "0", to: "base", type: "java.lang.AbstractStringBuilder" }
+  - { method: "<java.lang.AbstractStringBuilder: java.lang.AbstractStringBuilder append(java.lang.AbstractStringBuilder)>", from: "0", to: "base", type: "java.lang.AbstractStringBuilder" }
+  - { method: "<java.lang.AbstractStringBuilder: java.lang.AbstractStringBuilder append(java.lang.CharSequence)>", from: "0", to: "base", type: "java.lang.AbstractStringBuilder" }
+  - { method: "<java.lang.AbstractStringBuilder: java.lang.Appendable append(java.lang.CharSequence)>", from: "0", to: "base", type: "java.lang.AbstractStringBuilder" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.AbstractStringBuilder)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.AbstractStringBuilder append(java.lang.CharSequence)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.AbstractStringBuilder append(java.lang.AbstractStringBuilder)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.AbstractStringBuilder append(java.lang.StringBuffer)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.AbstractStringBuilder append(java.lang.String)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.AbstractStringBuilder append(java.lang.Object)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.Appendable append(java.lang.CharSequence)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuilder: java.lang.AbstractStringBuilder append(java.lang.CharSequence)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.AbstractStringBuilder append(java.lang.StringBuffer)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.AbstractStringBuilder append(java.lang.String)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.AbstractStringBuilder append(java.lang.Object)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.Appendable append(java.lang.CharSequence)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.AbstractStringBuilder: java.lang.String toString()>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.util.Enumeration: java.lang.Object nextElement()>", from: "base", to: "result", type: "java.lang.String" }
+
+callSiteMode: true
+
+[Pointer analysis] elapsed time: 52.96s; CPU usage: start 45.13%, peak 57.16%, end 10.54%; Memory usage: start 332MB, peak 1319MB, end 1334MB
+Detected 108 taint flow(s):
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <java.io.FileInputStream: void <init>(java.lang.String)>[2@L111] invokespecial %v3.<init>(name)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <java.io.FilePermission: void init(int)>[49@L344] invokespecial %v30.<init>(name)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <java.io.FilePermission: void init(int)>[121@L381] invokespecial %v70.<init>(name#1)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <java.io.FilePermission$2: java.lang.String run()>[19@L397] invokespecial %v18.<init>(path#1)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <java.io.FilePermission$2: java.lang.String run()>[32@L400] invokespecial %v28.<init>(path)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <java.io.PrintWriter: void print(java.lang.String)>[1@L685] invokevirtual this.write(%v2)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <java.io.PrintWriter: void println(java.lang.String)>[2@L820] invokevirtual this.print(x)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <java.io.PrintWriter: void println(java.lang.Object)>[3@L837] invokevirtual this.print(s)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <java.io.UnixFileSystem: java.lang.String canonicalize(java.lang.String)>[51@L207] invokespecial f.<init>(res)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <java.lang.Throwable$WrappedPrintWriter: void println(java.lang.Object)>[1@L779] invokevirtual %v2.println(o)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <java.nio.file.Path: java.io.File toFile()>[5@L769] invokespecial %v3.<init>(%v4)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <java.security.Security: boolean loadProps(java.io.File,java.lang.String,boolean)>[13@L137] invokespecial propFile.<init>(extraPropFile)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <java.security.Security: java.io.File securityPropFile(java.lang.String)>[15@L196] invokespecial %v3.<init>(%v15)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <java.sql.DriverManager: void println(java.lang.String)>[5@L536] invokevirtual %v6.println(message)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <java.time.zone.TzdbZoneRulesProvider: void <init>()>[18@L110] invokespecial %v17.<init>(libDir, %c18)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <java.util.Currency$1: java.lang.Void run()>[72@L247] invokespecial propFile.<init>(propsFile)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <java.util.jar.JarFile: void <init>(java.lang.String)>[2@L256] invokespecial %v2.<init>(name)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <java.util.logging.LogManager: void readConfiguration()>[24@L1383] invokespecial in.<init>(fname)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <java.util.zip.ZipFile: void <init>(java.io.File,int,java.nio.charset.Charset)>[21@L237] invokespecial file#1.<init>(name)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <javax.xml.parsers.FactoryFinder: java.lang.Object find(java.lang.String,java.lang.String)>[60@L0] invokespecial %v48.<init>(%v44)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <jdk.internal.loader.ClassLoaderHelper: java.io.File mapAlternativeName(java.io.File)>[14@L74] invokespecial %v8.<init>(%v14)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <jdk.internal.loader.FileURLMapper: boolean exists()>[5@L77] invokespecial f.<init>(s)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <jdk.internal.loader.NativeLibraries: jdk.internal.loader.NativeLibrary findFromPaths(java.lang.String[],java.lang.Class,java.lang.String)>[8@L314] invokespecial libfile.<init>(path, %v14)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <jdk.internal.loader.NativeLibraries$NativeLibraryImpl$1: java.lang.Boolean run()>[3@L399] invokespecial file.<init>(%v4)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <jdk.internal.loader.URLClassPath: java.net.URL toFileURL(java.lang.String)>[1@L270] invokespecial %v2.<init>(s)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <jdk.internal.loader.URLClassPath$FileLoader: void <init>(java.net.URL)>[7@L1222] invokespecial %v8.<init>(path#1)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <jdk.internal.loader.URLClassPath$JarLoader: java.util.jar.JarFile getJarFile(java.net.URL)>[15@L826] invokespecial %v11.<init>(%v12)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <org.hibernate.hql.ast.util.ASTPrinter: void showNode(java.io.PrintWriter,antlr.collections.AST)>[2@L183] invokevirtual pw.println(s)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <org.hibernate.tool.hbm2ddl.SchemaExport: void importScript(org.hibernate.tool.hbm2ddl.SchemaExport$NamedReader,java.sql.Statement)>[40@L366] invokeinterface statement.execute(trimmedSql)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <org.hibernate.tool.hbm2ddl.SchemaExport: void execute(boolean,boolean,java.io.Writer,java.sql.Statement,java.lang.String)>[26@L421] invokeinterface statement.executeUpdate(sql)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <org.hibernate.tool.hbm2ddl.SchemaUpdate: void execute(boolean,boolean)>[78@L204] invokeinterface stmt.executeUpdate(formatted)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <org.owasp.benchmark.helpers.DatabaseHelper: void printResults(java.sql.Statement,java.lang.String,javax.servlet.http.HttpServletResponse)>[15@L212] invokevirtual out.write(%v20)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[46@L79] statement = invokeinterface connection.prepareStatement(sql, %c41, %c40, %ci2)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <org.springframework.beans.propertyeditors.FileEditor: void setAsText(java.lang.String)>[9@L89] invokespecial %v9.<init>(text)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <org.springframework.beans.propertyeditors.PathEditor: void setAsText(java.lang.String)>[50@L107] %v31 = invokestatic java.nio.file.Paths.get(text, %v30)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <org.springframework.cglib.core.DebuggingClassWriter$1: java.lang.Object run()>[23@L82] invokespecial %v20.<init>(%v27)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <org.springframework.core.io.FileSystemResource: void <init>(java.lang.String)>[6@L82] invokespecial %v4.<init>(path)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <org.springframework.core.io.support.PathMatchingResourcePatternResolver: void addClassPathManifestEntries(java.util.Set)>[12@L429] invokespecial %v18.<init>(path)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <org.springframework.util.ResourceUtils: java.io.File getFile(java.net.URL,java.lang.String)>[20@L222] invokespecial %v15.<init>(%v17)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <org.springframework.util.ResourceUtils: java.io.File getFile(java.net.URL,java.lang.String)>[25@L226] invokespecial %v19.<init>(%v20)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <sun.net.www.MimeEntry: void setImageFileName(java.lang.String)>[2@L154] invokespecial file.<init>(filename)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <sun.net.www.protocol.file.FileURLConnection: void connect()>[31@L86] invokespecial %v22.<init>(%v23)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <sun.net.www.protocol.file.Handler: java.net.URLConnection openConnection(java.net.URL,java.net.Proxy)>[14@L80] invokespecial file.<init>(%v39)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <sun.net.www.protocol.jar.URLJarFile: void <init>(java.net.URL,sun.net.www.protocol.jar.URLJarFile$URLJarFileCloseController,java.lang.Runtime$Version)>[4@L103] invokespecial %v4.<init>(%v6)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <sun.security.provider.PolicyFile: java.security.CodeSource canonicalizeCodebase(java.security.CodeSource,boolean)>[47@L1634] invokespecial %v37.<init>(path#2)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <sun.security.provider.PolicyFile: java.lang.String canonPath(java.lang.String)>[15@L1665] invokespecial %v13.<init>(path#1)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <sun.security.provider.PolicyFile: java.lang.String canonPath(java.lang.String)>[28@L1668] invokespecial %v23.<init>(path)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <sun.security.provider.PolicyFile$4: java.lang.Boolean run()>[18@L412] invokespecial policyFile.<init>(extra_policy#1)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <sun.security.provider.PolicyFile$4: java.lang.Boolean run()>[23@L415] invokespecial %v19.<init>(%v20)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <sun.security.provider.PolicyFile$4: java.lang.Boolean run()>[85@L457] invokespecial %v59.<init>(%v61)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <sun.security.provider.SunEntries: java.io.File getDeviceFile(java.net.URL)>[27@L409] invokespecial %v22.<init>(%v23)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <sun.security.util.AnchorCertificates$1: java.lang.Void run()>[3@L58] invokespecial f.<init>(%v9)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <sun.security.util.PolicyUtil: java.io.InputStream getInputStream(java.net.URL)>[11@L60] invokespecial %v11.<init>(path#1)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[14@L42] %v13 = invokeinterface request.getRequestURL()/result -> <sun.util.calendar.ZoneInfoFile$1: java.lang.Void run()>[14@L256] invokespecial %v16.<init>(libDir, %c17)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <java.io.FileInputStream: void <init>(java.lang.String)>[2@L111] invokespecial %v3.<init>(name)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <java.io.FilePermission: void init(int)>[49@L344] invokespecial %v30.<init>(name)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <java.io.FilePermission: void init(int)>[121@L381] invokespecial %v70.<init>(name#1)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <java.io.FilePermission$2: java.lang.String run()>[19@L397] invokespecial %v18.<init>(path#1)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <java.io.FilePermission$2: java.lang.String run()>[32@L400] invokespecial %v28.<init>(path)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <java.io.PrintWriter: void print(java.lang.String)>[1@L685] invokevirtual this.write(%v2)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <java.io.PrintWriter: void println(java.lang.String)>[2@L820] invokevirtual this.print(x)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <java.io.PrintWriter: void println(java.lang.Object)>[3@L837] invokevirtual this.print(s)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <java.io.UnixFileSystem: java.lang.String canonicalize(java.lang.String)>[51@L207] invokespecial f.<init>(res)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <java.lang.Throwable$WrappedPrintWriter: void println(java.lang.Object)>[1@L779] invokevirtual %v2.println(o)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <java.nio.file.Path: java.io.File toFile()>[5@L769] invokespecial %v3.<init>(%v4)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <java.security.Security: boolean loadProps(java.io.File,java.lang.String,boolean)>[13@L137] invokespecial propFile.<init>(extraPropFile)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <java.security.Security: java.io.File securityPropFile(java.lang.String)>[15@L196] invokespecial %v3.<init>(%v15)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <java.sql.DriverManager: void println(java.lang.String)>[5@L536] invokevirtual %v6.println(message)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <java.time.zone.TzdbZoneRulesProvider: void <init>()>[18@L110] invokespecial %v17.<init>(libDir, %c18)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <java.util.Currency$1: java.lang.Void run()>[72@L247] invokespecial propFile.<init>(propsFile)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <java.util.jar.JarFile: void <init>(java.lang.String)>[2@L256] invokespecial %v2.<init>(name)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <java.util.logging.LogManager: void readConfiguration()>[24@L1383] invokespecial in.<init>(fname)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <java.util.zip.ZipFile: void <init>(java.io.File,int,java.nio.charset.Charset)>[21@L237] invokespecial file#1.<init>(name)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <javax.xml.parsers.FactoryFinder: java.lang.Object find(java.lang.String,java.lang.String)>[60@L0] invokespecial %v48.<init>(%v44)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <jdk.internal.loader.ClassLoaderHelper: java.io.File mapAlternativeName(java.io.File)>[14@L74] invokespecial %v8.<init>(%v14)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <jdk.internal.loader.FileURLMapper: boolean exists()>[5@L77] invokespecial f.<init>(s)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <jdk.internal.loader.NativeLibraries: jdk.internal.loader.NativeLibrary findFromPaths(java.lang.String[],java.lang.Class,java.lang.String)>[8@L314] invokespecial libfile.<init>(path, %v14)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <jdk.internal.loader.NativeLibraries$NativeLibraryImpl$1: java.lang.Boolean run()>[3@L399] invokespecial file.<init>(%v4)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <jdk.internal.loader.URLClassPath: java.net.URL toFileURL(java.lang.String)>[1@L270] invokespecial %v2.<init>(s)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <jdk.internal.loader.URLClassPath$FileLoader: void <init>(java.net.URL)>[7@L1222] invokespecial %v8.<init>(path#1)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <jdk.internal.loader.URLClassPath$JarLoader: java.util.jar.JarFile getJarFile(java.net.URL)>[15@L826] invokespecial %v11.<init>(%v12)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <org.hibernate.hql.ast.util.ASTPrinter: void showNode(java.io.PrintWriter,antlr.collections.AST)>[2@L183] invokevirtual pw.println(s)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <org.hibernate.tool.hbm2ddl.SchemaExport: void importScript(org.hibernate.tool.hbm2ddl.SchemaExport$NamedReader,java.sql.Statement)>[40@L366] invokeinterface statement.execute(trimmedSql)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <org.hibernate.tool.hbm2ddl.SchemaExport: void execute(boolean,boolean,java.io.Writer,java.sql.Statement,java.lang.String)>[26@L421] invokeinterface statement.executeUpdate(sql)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <org.hibernate.tool.hbm2ddl.SchemaUpdate: void execute(boolean,boolean)>[78@L204] invokeinterface stmt.executeUpdate(formatted)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <org.owasp.benchmark.helpers.DatabaseHelper: void printResults(java.sql.Statement,java.lang.String,javax.servlet.http.HttpServletResponse)>[15@L212] invokevirtual out.write(%v20)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[46@L79] statement = invokeinterface connection.prepareStatement(sql, %c41, %c40, %ci2)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <org.springframework.beans.propertyeditors.FileEditor: void setAsText(java.lang.String)>[9@L89] invokespecial %v9.<init>(text)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <org.springframework.beans.propertyeditors.PathEditor: void setAsText(java.lang.String)>[50@L107] %v31 = invokestatic java.nio.file.Paths.get(text, %v30)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <org.springframework.cglib.core.DebuggingClassWriter$1: java.lang.Object run()>[23@L82] invokespecial %v20.<init>(%v27)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <org.springframework.core.io.FileSystemResource: void <init>(java.lang.String)>[6@L82] invokespecial %v4.<init>(path)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <org.springframework.core.io.support.PathMatchingResourcePatternResolver: void addClassPathManifestEntries(java.util.Set)>[12@L429] invokespecial %v18.<init>(path)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <org.springframework.util.ResourceUtils: java.io.File getFile(java.net.URL,java.lang.String)>[20@L222] invokespecial %v15.<init>(%v17)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <org.springframework.util.ResourceUtils: java.io.File getFile(java.net.URL,java.lang.String)>[25@L226] invokespecial %v19.<init>(%v20)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <sun.net.www.MimeEntry: void setImageFileName(java.lang.String)>[2@L154] invokespecial file.<init>(filename)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <sun.net.www.protocol.file.FileURLConnection: void connect()>[31@L86] invokespecial %v22.<init>(%v23)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <sun.net.www.protocol.file.Handler: java.net.URLConnection openConnection(java.net.URL,java.net.Proxy)>[14@L80] invokespecial file.<init>(%v39)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <sun.net.www.protocol.jar.URLJarFile: void <init>(java.net.URL,sun.net.www.protocol.jar.URLJarFile$URLJarFileCloseController,java.lang.Runtime$Version)>[4@L103] invokespecial %v4.<init>(%v6)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <sun.security.provider.PolicyFile: java.security.CodeSource canonicalizeCodebase(java.security.CodeSource,boolean)>[47@L1634] invokespecial %v37.<init>(path#2)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <sun.security.provider.PolicyFile: java.lang.String canonPath(java.lang.String)>[15@L1665] invokespecial %v13.<init>(path#1)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <sun.security.provider.PolicyFile: java.lang.String canonPath(java.lang.String)>[28@L1668] invokespecial %v23.<init>(path)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <sun.security.provider.PolicyFile$4: java.lang.Boolean run()>[18@L412] invokespecial policyFile.<init>(extra_policy#1)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <sun.security.provider.PolicyFile$4: java.lang.Boolean run()>[23@L415] invokespecial %v19.<init>(%v20)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <sun.security.provider.PolicyFile$4: java.lang.Boolean run()>[85@L457] invokespecial %v59.<init>(%v61)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <sun.security.provider.SunEntries: java.io.File getDeviceFile(java.net.URL)>[27@L409] invokespecial %v22.<init>(%v23)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <sun.security.util.AnchorCertificates$1: java.lang.Void run()>[3@L58] invokespecial f.<init>(%v9)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <sun.security.util.PolicyUtil: java.io.InputStream getInputStream(java.net.URL)>[11@L60] invokespecial %v11.<init>(path#1)/0}
+TaintFlow{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>[16@L60] %v20 = invokevirtual theCookie.getValue()/result -> <sun.util.calendar.ZoneInfoFile$1: java.lang.Void run()>[14@L256] invokespecial %v16.<init>(libDir, %c17)/0}
+[TFGDumper] starts ...
+Source nodes:
+VarNode{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>/%v13}
+VarNode{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>/%v17}
+VarNode{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>/%v20}
+VarNode{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>/theCookies}
+VarNode{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>/%v11}
+Sink nodes:
+VarNode{<jdk.internal.loader.URLClassPath$JarLoader: java.util.jar.JarFile getJarFile(java.net.URL)>/%v12}
+VarNode{<org.springframework.cglib.core.DebuggingClassWriter$1: java.lang.Object run()>/%v27}
+VarNode{<sun.net.www.protocol.file.Handler: java.net.URLConnection openConnection(java.net.URL,java.net.Proxy)>/%v39}
+VarNode{<org.springframework.util.ResourceUtils: java.io.File getFile(java.net.URL,java.lang.String)>/%v20}
+VarNode{<java.io.FileInputStream: void <init>(java.lang.String)>/name}
+VarNode{<org.hibernate.tool.hbm2ddl.SchemaExport: void execute(boolean,boolean,java.io.Writer,java.sql.Statement,java.lang.String)>/sql}
+VarNode{<java.io.FilePermission$2: java.lang.String run()>/path#1}
+VarNode{<java.io.PrintWriter: void print(java.lang.String)>/%v2}
+VarNode{<sun.net.www.MimeEntry: void setImageFileName(java.lang.String)>/filename}
+VarNode{<org.springframework.beans.propertyeditors.FileEditor: void setAsText(java.lang.String)>/text}
+VarNode{<sun.security.util.AnchorCertificates$1: java.lang.Void run()>/%v9}
+VarNode{<org.springframework.util.ResourceUtils: java.io.File getFile(java.net.URL,java.lang.String)>/%v17}
+VarNode{<java.io.PrintWriter: void println(java.lang.String)>/x}
+VarNode{<sun.util.calendar.ZoneInfoFile$1: java.lang.Void run()>/libDir}
+VarNode{<sun.security.util.PolicyUtil: java.io.InputStream getInputStream(java.net.URL)>/path#1}
+VarNode{<java.util.Currency$1: java.lang.Void run()>/propsFile}
+VarNode{<sun.net.www.protocol.jar.URLJarFile: void <init>(java.net.URL,sun.net.www.protocol.jar.URLJarFile$URLJarFileCloseController,java.lang.Runtime$Version)>/%v6}
+VarNode{<sun.security.provider.PolicyFile$4: java.lang.Boolean run()>/%v20}
+VarNode{<org.owasp.benchmark.testcode.BenchmarkTest00100: void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)>/sql}
+VarNode{<sun.net.www.protocol.file.FileURLConnection: void connect()>/%v23}
+VarNode{<java.util.zip.ZipFile: void <init>(java.io.File,int,java.nio.charset.Charset)>/name}
+VarNode{<sun.security.provider.PolicyFile$4: java.lang.Boolean run()>/extra_policy#1}
+VarNode{<sun.security.provider.PolicyFile: java.security.CodeSource canonicalizeCodebase(java.security.CodeSource,boolean)>/path#2}
+VarNode{<org.owasp.benchmark.helpers.DatabaseHelper: void printResults(java.sql.Statement,java.lang.String,javax.servlet.http.HttpServletResponse)>/%v20}
+VarNode{<javax.xml.parsers.FactoryFinder: java.lang.Object find(java.lang.String,java.lang.String)>/%v44}
+VarNode{<java.util.jar.JarFile: void <init>(java.lang.String)>/name}
+VarNode{<java.io.PrintWriter: void println(java.lang.Object)>/s}
+VarNode{<sun.security.provider.PolicyFile: java.lang.String canonPath(java.lang.String)>/path}
+VarNode{<java.time.zone.TzdbZoneRulesProvider: void <init>()>/libDir}
+VarNode{<jdk.internal.loader.NativeLibraries: jdk.internal.loader.NativeLibrary findFromPaths(java.lang.String[],java.lang.Class,java.lang.String)>/path}
+VarNode{<jdk.internal.loader.URLClassPath$FileLoader: void <init>(java.net.URL)>/path#1}
+VarNode{<sun.security.provider.PolicyFile: java.lang.String canonPath(java.lang.String)>/path#1}
+VarNode{<java.io.FilePermission: void init(int)>/name}
+VarNode{<java.security.Security: boolean loadProps(java.io.File,java.lang.String,boolean)>/extraPropFile}
+VarNode{<java.io.FilePermission$2: java.lang.String run()>/path}
+VarNode{<java.lang.Throwable$WrappedPrintWriter: void println(java.lang.Object)>/o}
+VarNode{<org.hibernate.tool.hbm2ddl.SchemaExport: void importScript(org.hibernate.tool.hbm2ddl.SchemaExport$NamedReader,java.sql.Statement)>/trimmedSql}
+VarNode{<java.io.FilePermission: void init(int)>/name#1}
+VarNode{<sun.security.provider.SunEntries: java.io.File getDeviceFile(java.net.URL)>/%v23}
+VarNode{<org.hibernate.tool.hbm2ddl.SchemaUpdate: void execute(boolean,boolean)>/formatted}
+VarNode{<org.springframework.core.io.support.PathMatchingResourcePatternResolver: void addClassPathManifestEntries(java.util.Set)>/path}
+VarNode{<java.io.UnixFileSystem: java.lang.String canonicalize(java.lang.String)>/res}
+VarNode{<jdk.internal.loader.URLClassPath: java.net.URL toFileURL(java.lang.String)>/s}
+VarNode{<org.springframework.core.io.FileSystemResource: void <init>(java.lang.String)>/path}
+VarNode{<sun.security.provider.PolicyFile$4: java.lang.Boolean run()>/%v61}
+VarNode{<java.util.logging.LogManager: void readConfiguration()>/fname}
+VarNode{<java.security.Security: java.io.File securityPropFile(java.lang.String)>/%v15}
+VarNode{<org.hibernate.hql.ast.util.ASTPrinter: void showNode(java.io.PrintWriter,antlr.collections.AST)>/s}
+VarNode{<java.nio.file.Path: java.io.File toFile()>/%v4}
+VarNode{<org.springframework.beans.propertyeditors.PathEditor: void setAsText(java.lang.String)>/text}
+VarNode{<java.sql.DriverManager: void println(java.lang.String)>/message}
+VarNode{<jdk.internal.loader.FileURLMapper: boolean exists()>/s}
+VarNode{<jdk.internal.loader.ClassLoaderHelper: java.io.File mapAlternativeName(java.io.File)>/%v14}
+VarNode{<jdk.internal.loader.NativeLibraries$NativeLibraryImpl$1: java.lang.Boolean run()>/%v4}
+Dumping /Users/cctsao/Documents/GitHub/Program_Analysis_Project/output/batch/taie-BenchmarkTest00100/taint-flow-graph.dot
+[TFGDumper] elapsed time: 0.86s; CPU usage: start 40.70%, peak 44.41%, end 34.74%; Memory usage: start 1359MB, peak 1359MB, end 1621MB
+-------------- Pointer analysis statistics: --------------
+#var pointers:                28,6846 (insens) / 28,6846 (sens)
+#objects:                     1,8357 (insens) / 1,8357 (sens)
+#var points-to:               6624,7298 (insens) / 6624,8731 (sens)
+#static field points-to:      1,8461 (sens)
+#instance field points-to:    1167,2005 (sens)
+#array points-to:             154,7650 (sens)
+#reachable methods:           2,8678 (insens) / 2,8678 (sens)
+#call graph edges:            21,8300 (insens) / 21,8579 (sens)
+----------------------------------------
+[pta] elapsed time: 58.32s; CPU usage: start 63.07%, peak 49.00%, end 11.44%; Memory usage: start 300MB, peak 1755MB, end 1614MB
+[Tai-e] elapsed time: 59.30s; CPU usage: start 0.00%, peak 43.84%, end 13.13%; Memory usage: start 26MB, peak 1759MB, end 1614MB
+

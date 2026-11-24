@@ -1,0 +1,7 @@
+digraph G {
+  node [];
+  edge [];
+  "VarNode{<org.owasp.benchmark.helpers.SeparateClassRequest: java.lang.String getTheParameter(java.lang.String)>/%v3}" [fillcolor=floralwhite,shape=box,style=filled];
+  "{ kind: \"call\", method: \"<javax.servlet.ServletRequest: java.lang.String getParameter(java.lang.String)>\", index: \"result\", type: \"java.lang.String\" }\n<org.owasp.benchmark.helpers.SeparateClassRequest: java.lang.String getTheParameter(java.lang.String)>[1@L31] %v3 = invokeinterface %v2.getParameter(p)/result" [fillcolor=gold,shape=doubleoctagon,style=filled];
+  "{ kind: \"call\", method: \"<javax.servlet.ServletRequest: java.lang.String getParameter(java.lang.String)>\", index: \"result\", type: \"java.lang.String\" }\n<org.owasp.benchmark.helpers.SeparateClassRequest: java.lang.String getTheParameter(java.lang.String)>[1@L31] %v3 = invokeinterface %v2.getParameter(p)/result" -> "VarNode{<org.owasp.benchmark.helpers.SeparateClassRequest: java.lang.String getTheParameter(java.lang.String)>/%v3}";
+}

@@ -21,7 +21,10 @@ Usage:
 Known limitation: when source and sink live in different files, the
 slice has one section per file (each headed by a ``// file:`` line)
 and line numbers are per-file; the grounding checker resolves a cited
-line against the first matching section.
+line against the first matching section unless the evidence names a
+file (``evidence["file"]``), in which case it resolves within that
+file's sections only. Field definitions are included only for
+single-line declarations with an initializer.
 """
 
 import argparse
@@ -38,6 +41,89 @@ CWE_NAMES = {
 }
 
 WINDOW = 30
+
+# A class-level field declaration: optional modifiers, a type, a name,
+# an initializer, ending in ';'. The text before the first '=' must not
+# contain '(' (that would be a method declaration).
+FIELD_RE = re.compile(
+    r"^\s*(?:(?:public|private|protected|static|final|transient|volatile)\s+)*"
+    r"(?:[\w<>\[\],\s.]+?)\s+(\w+)\s*=\s*.*;\s*$"
+)
+
+
+def _line_depths(lines):
+    """Brace depth at the start of each line (strings/comments skipped)."""
+    depths, depth = [], 0
+    state = "normal"
+    for text in lines:
+        depths.append(depth)
+        j = 0
+        while j < len(text):
+            ch = text[j]
+            nxt = text[j + 1] if j + 1 < len(text) else ""
+            if state == "normal":
+                if ch == "/" and nxt == "/":
+                    break
+                if ch == "/" and nxt == "*":
+                    state = "block_comment"
+                    j += 2
+                    continue
+                if ch == '"':
+                    state = "string"
+                    j += 1
+                    continue
+                if ch == "'":
+                    state = "char"
+                    j += 1
+                    continue
+                if ch == "{":
+                    depth += 1
+                elif ch == "}":
+                    depth -= 1
+            elif state == "block_comment":
+                if ch == "*" and nxt == "/":
+                    state = "normal"
+                    j += 2
+                    continue
+            elif state == "string":
+                if ch == "\\":
+                    j += 2
+                    continue
+                if ch == '"':
+                    state = "normal"
+            elif state == "char":
+                if ch == "\\":
+                    j += 2
+                    continue
+                if ch == "'":
+                    state = "normal"
+            j += 1
+        if state == "line_comment":
+            state = "normal"
+    return depths
+
+
+def field_declarations(lines):
+    """Class-level field declarations: [(1-based line no, name, text)].
+
+    A field sits at brace depth 1 (inside the class, outside any
+    method). Only single-line declarations with an initializer are
+    collected; multi-line initializers are a known limitation.
+    """
+    depths = _line_depths(lines)
+    fields = []
+    for i, text in enumerate(lines):
+        if depths[i] != 1:
+            continue
+        if "=" not in text:
+            continue
+        before_eq = text.split("=", 1)[0]
+        if "(" in before_eq:
+            continue
+        m = FIELD_RE.match(text)
+        if m:
+            fields.append((i + 1, m.group(1), text))
+    return fields
 
 
 def class_to_path(src_root, cls):
@@ -255,10 +341,41 @@ def build_slice(flow, src_root):
         sections.append((path, lines, lo, hi))
     if not sections:
         return "", None, None
+    # Field definitions referenced by the slice (N3 slice enrichment):
+    # a field used in a method body is often defined in another class
+    # (e.g. Utils.TESTFILES_DIR, a constant the taint analysis cannot
+    # see through). Include the defining line, with its real line
+    # number, so the adjudicator can cite it as constant evidence.
+    # The grounding checker resolves such citations by file name
+    # (evidence "file"), so cross-file line-number collisions are safe.
+    # Field inclusion runs to a fixed point: a field definition can
+    # itself reference another field (TESTFILES_DIR is built from
+    # USERDIR), and that definition is included too.
+    method_text = "\n".join(
+        f"// file: {path.name} (lines {lo}-{hi})\n{numbered(lines, lo, hi)}"
+        for path, lines, lo, hi in sections
+    )
     parts = []
     for path, lines, lo, hi in sections:
         parts.append(f"// file: {path.name} (lines {lo}-{hi})")
         parts.append(numbered(lines, lo, hi))
+        # Fixed-point: keep adding fields referenced by the text so far.
+        added = []
+        searchable = method_text
+        while True:
+            new = [
+                (n, name, text)
+                for n, name, text in field_declarations(lines)
+                if (n, name) not in [(a[0], a[1]) for a in added]
+                and re.search(r"\b" + re.escape(name) + r"\b", searchable)
+            ]
+            if not new:
+                break
+            added.extend(new)
+            searchable += "\n" + "\n".join(f"{n}: {text}" for n, _name, text in new)
+        if added:
+            parts.append(f"// file: {path.name} (field definitions)")
+            parts.append("\n".join(f"{n}: {text}" for n, _name, text in added))
     primary = sections[0]
     return "\n".join(parts), primary[0], (primary[2], primary[3])
 
@@ -272,7 +389,9 @@ def flow_facts(flow):
         + f".\nSink: <{snk['method']}> at line {snk['line']}"
         + (f" ({snk['stmt']}, argument index {snk['ref']})" if snk["stmt"] else ".")
         + "\nPath: as reported by the static analyzer (source -> sink); "
-        + "the slice shows the enclosing method(s) of the source and the sink."
+        + "the slice shows the enclosing method(s) of the source and the sink, "
+        + "plus the definitions of any class fields they reference "
+        + "(field definitions are listed per file after the method section)."
     )
 
 

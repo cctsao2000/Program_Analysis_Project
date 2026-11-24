@@ -89,11 +89,21 @@ Rules:
    `"FP"`; if it concludes there is a real vulnerability, the verdict
    is `"TP"`.
 
+8. The slice may include FIELD DEFINITIONS listed per file after the
+   method section. A value that comes from a field whose definition
+   is a constant (for example a `static final` string built only
+   from literals and non-tainted calls) is not attacker-controlled.
+   When the evidence you cite is in a file other than the sink's
+   file, include the file name in the evidence object as
+   `"file": "<name>"` (for example `"Utils.java"`), so the citation
+   resolves to the right file. Cite the line number as shown in the
+   slice.
+
 Reply with EXACTLY one JSON object, no other text, no markdown fences.
 Inside the `reasoning` string, do not use double-quote characters;
 use single quotes if you need to quote code.
 {"verdict": "TP" | "FP" | "uncertain",
- "evidence": {"kind": "sanitizer" | "constant", "api": "<exact API name as it appears in the code, or null for constant>", "line": <integer>} | null,
+ "evidence": {"kind": "sanitizer" | "constant", "api": "<exact API name as it appears in the code, or null for constant>", "line": <integer>, "file": "<file name, only when the evidence is in a different file from the sink>"} | null,
  "reasoning": "<at most 3 sentences>",
  "confidence": <number between 0 and 1>}
 ```
@@ -177,3 +187,12 @@ Does NOT count:
   flows, or hallucinating line numbers (caught by the checker).
 - JSON format failures: log the raw output verbatim and count them;
   do not silently repair outputs before scoring.
+- Verdict/reasoning mismatch (observed 2026-11-24 on 01878):
+  the reasoning correctly concluded "no SQL injection vulnerability
+  occurs" but the verdict was still "TP" with confidence 1.0.
+  Prompt rule 7 (verdict must agree with reasoning) fixed it on
+  re-run, but at batch scale the harness must catch it too:
+  `scripts/llm_adjudicate.py` flags a mismatch and retries once
+  with the model's own reasoning pasted back. Score by verdict
+  only after the consistency check passes; a flow whose verdict
+  contradicts its reasoning is not a clean data point.
