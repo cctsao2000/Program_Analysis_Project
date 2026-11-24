@@ -1,0 +1,426 @@
+java.version: 17.0.21.1
+java.version.date: 2026-11-17
+java.runtime.version: 17.0.21.1+0
+java.vendor: Homebrew
+java.vendor.version: Homebrew
+os.name: Mac OS X
+os.version: 14.5
+os.arch: aarch64
+Available CPU cores: 10
+Total memory: 16384MB
+Tai-e Version: 0.5.4
+Tai-e Commit: 6474e7da62fb1f3b692331040e66692cbf4d630d
+Writing analysis plan to /Users/cctsao/Documents/GitHub/Program_Analysis_Project/output/taie-pilot-00438-r2/tai-e-plan.yml
+[WorldBuilder] starts ...
+Duplicate classes (total 224) introduced by org.apache.servicemix.bundles.antlr-2.7.7_5.jar and antlr-2.7.6.jar,
+[antlr.collections.AST, antlr.TokenStreamRewriteEngine$ReplaceOp, antlr.TokenStreamRewriteEngine$1, antlr.DefaultFileLineFormatter] ... (220 more) is founded in both containers
+Duplicate classes (total 15) introduced by javaee-api-8.0.1.jar and jta-1.1.jar,
+[javax.transaction.Transaction, javax.transaction.TransactionRequiredException, javax.transaction.HeuristicRollbackException, javax.transaction.UserTransaction] ... (11 more) is founded in both containers
+Duplicate classes (total 3) introduced by jta-1.1.jar and java.transaction.xa,
+[javax.transaction.xa.XAException, javax.transaction.xa.XAResource, javax.transaction.xa.Xid] is founded in both containers
+Duplicate classes (total 4) introduced by commons-logging-1.3.5.jar and spring-jcl-5.3.39.jar,
+[org.apache.commons.logging.Log, org.apache.commons.logging.LogFactory, org.apache.commons.logging.impl.NoOpLog, org.apache.commons.logging.impl.SimpleLog] is founded in both containers
+Duplicate classes (total 38) introduced by activation-1.1.jar and jakarta.activation-1.2.2.jar,
+[javax.activation.DataContentHandlerFactory, com.sun.activation.viewers.TextEditor, com.sun.activation.registries.MailcapParseException, javax.activation.ActivationDataFlavor] ... (34 more) is founded in both containers
+Duplicate classes (total 88) introduced by xml-apis-1.4.01.jar and jdk.xml.dom,
+[org.w3c.dom.html.HTMLBRElement, org.w3c.dom.html.HTMLFormElement, org.w3c.dom.html.HTMLFieldSetElement, org.w3c.dom.html.HTMLIFrameElement] ... (84 more) is founded in both containers
+Duplicate classes (total 174) introduced by javaee-api-8.0.1.jar and hibernate-jpa-2.0-api-1.0.1.Final.jar,
+[javax.persistence.PrePersist, javax.persistence.spi.LoadState, javax.persistence.MappedSuperclass, javax.persistence.criteria.CriteriaBuilder$Case] ... (170 more) is founded in both containers
+Duplicate classes (total 200) introduced by xml-apis-1.4.01.jar and java.xml,
+[javax.xml.stream.util.StreamReaderDelegate, org.w3c.dom.DOMImplementationSource, org.w3c.dom.Text, org.w3c.dom.views.DocumentView] ... (196 more) is founded in both containers
+Duplicate classes (total 1) introduced by xercesImpl-2.12.2.jar and jdk.xml.dom,
+[org.w3c.dom.html.HTMLDOMImplementation] is founded in both containers
+Duplicate classes (total 4) introduced by javax.activation-api-1.2.0.jar and jakarta.activation-1.2.2.jar,
+[javax.activation.CommandInfo$Beans, javax.activation.MimetypesFileTypeMap$1, javax.activation.MailcapCommandMap$1, javax.activation.CommandInfo$Beans$1] is founded in both containers
+Duplicate classes (total 140) introduced by javaee-api-8.0.1.jar and javax.mail-1.6.2.jar,
+[javax.mail.EventQueue$QueueElement, javax.mail.internet.ParameterList$ToStringBuffer, javax.mail.util.ByteArrayDataSource, javax.mail.search.FromStringTerm] ... (136 more) is founded in both containers
+Duplicate classes (total 27) introduced by activation-1.1.jar and javax.activation-api-1.2.0.jar,
+[javax.activation.DataContentHandlerFactory, javax.activation.ActivationDataFlavor, javax.activation.DataSourceDataContentHandler, javax.activation.SecuritySupport$2] ... (23 more) is founded in both containers
+Duplicate classes (total 111) introduced by jaxb-api-2.3.1.jar and jakarta.xml.bind-api-2.3.3.jar,
+[javax.xml.bind.Element, javax.xml.bind.annotation.XmlAccessOrder, javax.xml.bind.MarshalException, javax.xml.bind.annotation.XmlElement$DEFAULT] ... (107 more) is founded in both containers
+Duplicate classes (total 54) introduced by javaee-api-8.0.1.jar and jsr311-api-1.1.1.jar,
+[javax.ws.rs.Encoded, javax.ws.rs.Produces, javax.ws.rs.ext.Provider, javax.ws.rs.Path] ... (50 more) is founded in both containers
+
+Cannot resolve class javax.annotation.Nonnull; treating it as phantom class.
+Cannot resolve class org.jaxen.VariableContext; treating it as phantom class.
+Cannot resolve class kotlin.reflect.KProperty; treating it as phantom class.
+Cannot resolve class kotlin.reflect.KType; treating it as phantom class.
+Cannot resolve class kotlin.reflect.jvm.ReflectJvmMapping; treating it as phantom class.
+Cannot resolve class kotlin.reflect.KParameter; treating it as phantom class.
+Cannot resolve class kotlin.jvm.JvmClassMappingKt; treating it as phantom class.
+Cannot resolve class kotlin.reflect.KCallable; treating it as phantom class.
+Cannot resolve class kotlin.reflect.jvm.KCallablesJvm; treating it as phantom class.
+Cannot resolve class kotlin.reflect.KClass; treating it as phantom class.
+Cannot resolve class kotlin.reflect.full.KClasses; treating it as phantom class.
+Cannot resolve class kotlin.reflect.KFunction; treating it as phantom class.
+Cannot resolve class kotlin.Unit; treating it as phantom class.
+Cannot resolve class kotlin.reflect.KParameter$Kind; treating it as phantom class.
+Cannot resolve class org.jaxen.FunctionContext; treating it as phantom class.
+Cannot resolve class org.jaxen.NamespaceContext; treating it as phantom class.
+Cannot resolve class org.jaxen.pattern.Pattern; treating it as phantom class.
+Cannot resolve class org.jaxen.ContextSupport; treating it as phantom class.
+Cannot resolve class org.jaxen.JaxenException; treating it as phantom class.
+Cannot resolve class org.jaxen.saxpath.SAXPathException; treating it as phantom class.
+Cannot resolve class org.jaxen.pattern.PatternParser; treating it as phantom class.
+Cannot resolve class org.jaxen.SimpleNamespaceContext; treating it as phantom class.
+Cannot resolve class org.jaxen.Context; treating it as phantom class.
+Cannot resolve class org.jaxen.XPathFunctionContext; treating it as phantom class.
+Cannot resolve class org.jaxen.dom4j.Dom4jXPath; treating it as phantom class.
+Cannot resolve class org.jaxen.Navigator; treating it as phantom class.
+Cannot resolve class org.jaxen.SimpleVariableContext; treating it as phantom class.
+Cannot resolve class org.jaxen.dom4j.DocumentNavigator; treating it as phantom class.
+Cannot resolve class org.jaxen.XPath; treating it as phantom class.
+Cannot resolve class org.objectweb.asm.util.TraceClassVisitor; treating it as phantom class.
+Cannot resolve class javax.annotation.Nullable; treating it as phantom class.
+Warning: main class was not given!
+13658 classes with 129349 methods in the world
+[WorldBuilder] elapsed time: 0.92s; CPU usage: start 22.50%, peak 9.85%, end 44.87%; Memory usage: start 29MB, peak 29MB, end 295MB
+[pta] starts ...
+Loading taint config from /Users/cctsao/Documents/GitHub/Program_Analysis_Project/configs
+Cannot find source method '<javax.servlet.ServletRequestWrapper: java.lang.String getContentType()>'
+Cannot find source method '<javax.servlet.ServletRequestWrapper: java.lang.String getLocalName()>'
+Cannot find source method '<javax.servlet.ServletRequestWrapper: java.lang.String getParameter(java.lang.String)>'
+Cannot find source method '<javax.servlet.ServletRequestWrapper: java.util.Map getParameterMap()>'
+Cannot find source method '<javax.servlet.ServletRequestWrapper: java.util.Enumeration getParameterNames()>'
+Cannot find source method '<javax.servlet.ServletRequestWrapper: java.lang.String[] getParameterValues(java.lang.String)>'
+Cannot find source method '<javax.servlet.ServletRequestWrapper: java.lang.String getRemoteHost()>'
+Cannot find source method '<javax.servlet.ServletRequestWrapper: java.lang.String getServerName()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getContentType()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: javax.servlet.http.Cookie[] getCookies()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getHeader(java.lang.String)>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.util.Enumeration getHeaderNames()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.util.Enumeration getHeaders(java.lang.String)>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getLocalName()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getParameter(java.lang.String)>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.util.Map getParameterMap()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.util.Enumeration getParameterNames()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.String[] getParameterValues(java.lang.String)>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getPathInfo()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getPathTranslated()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getQueryString()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getRemoteHost()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getRemoteUser()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getRequestURI()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.StringBuffer getRequestURL()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getServerName()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getServletPath()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequest: java.lang.String getContentType()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequest: java.lang.String getLocalName()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>'
+Cannot find source method '<javax.servlet.http.HttpServletRequest: java.util.Map getParameterMap()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequest: java.util.Enumeration getParameterNames()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequest: java.lang.String[] getParameterValues(java.lang.String)>'
+Cannot find source method '<javax.servlet.http.HttpServletRequest: java.lang.String getRemoteHost()>'
+Cannot find source method '<javax.servlet.http.HttpServletRequest: java.lang.String getServerName()>'
+Cannot find sink method '<javax.activation.FileDataSource: void <init>(java.lang.String)>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: void write(java.lang.String)>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: void write(java.lang.String,int,int)>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: void write(char[])>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: void write(char[],int,int)>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: java.io.PrintWriter append(java.lang.CharSequence)>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: java.io.PrintWriter append(java.lang.CharSequence,int,int)>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: java.io.PrintWriter append(char)>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: void print(char[])>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: void print(java.lang.String)>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: void print(java.lang.Object)>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: void print(char)>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: void println(char[])>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: void println(java.lang.String)>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: void println(java.lang.Object)>'
+Cannot find sink method '<javax.servlet.jsp.JspWriter: void println(char)>'
+Cannot find sink method '<org.springframework.jdbc.core.JdbcTemplate: int batchUpdate(java.lang.String)>'
+Cannot find sink method '<org.springframework.jdbc.core.JdbcTemplate: long queryForLong(java.lang.String)>'
+Cannot find sink method '<org.springframework.jdbc.core.JdbcTemplate: int queryForInt(java.lang.String)>'
+TaintConfig:
+sources:
+  - { kind: "call", method: "<javax.servlet.http.Cookie: java.lang.String getComment()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.http.Cookie: java.lang.String getDomain()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.http.Cookie: java.lang.String getName()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.http.Cookie: java.lang.String getPath()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.http.Cookie: java.lang.String getValue()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.http.HttpServletRequest: javax.servlet.http.Cookie[] getCookies()>", index: "result", type: "javax.servlet.http.Cookie[]" }
+  - { kind: "call", method: "<javax.servlet.http.HttpServletRequest: java.lang.String getHeader(java.lang.String)>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.http.HttpServletRequest: java.util.Enumeration getHeaderNames()>", index: "result", type: "java.util.Enumeration" }
+  - { kind: "call", method: "<javax.servlet.http.HttpServletRequest: java.util.Enumeration getHeaders(java.lang.String)>", index: "result", type: "java.util.Enumeration" }
+  - { kind: "call", method: "<javax.servlet.http.HttpServletRequest: java.lang.String getPathInfo()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.http.HttpServletRequest: java.lang.String getPathTranslated()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.http.HttpServletRequest: java.lang.String getQueryString()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.http.HttpServletRequest: java.lang.String getRemoteUser()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.http.HttpServletRequest: java.lang.String getRequestURI()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.http.HttpServletRequest: java.lang.StringBuffer getRequestURL()>", index: "result", type: "java.lang.StringBuffer" }
+  - { kind: "call", method: "<javax.servlet.http.HttpServletRequest: java.lang.String getServletPath()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.ServletRequest: java.lang.String getContentType()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.ServletRequest: java.lang.String getLocalName()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.ServletRequest: java.lang.String getParameter(java.lang.String)>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.ServletRequest: java.util.Map getParameterMap()>", index: "result", type: "java.util.Map" }
+  - { kind: "call", method: "<javax.servlet.ServletRequest: java.util.Enumeration getParameterNames()>", index: "result", type: "java.util.Enumeration" }
+  - { kind: "call", method: "<javax.servlet.ServletRequest: java.lang.String[] getParameterValues(java.lang.String)>", index: "result", type: "java.lang.String[]" }
+  - { kind: "call", method: "<javax.servlet.ServletRequest: java.lang.String getRemoteHost()>", index: "result", type: "java.lang.String" }
+  - { kind: "call", method: "<javax.servlet.ServletRequest: java.lang.String getServerName()>", index: "result", type: "java.lang.String" }
+
+sinks:
+  - { method: "<java.io.File: void <init>(java.lang.String)>", index: "0" }
+  - { method: "<java.io.File: void <init>(java.lang.String,java.lang.String)>", index: "0" }
+  - { method: "<java.io.File: void <init>(java.lang.String,java.lang.String)>", index: "1" }
+  - { method: "<java.io.File: void <init>(java.io.File,java.lang.String)>", index: "0" }
+  - { method: "<java.io.File: void <init>(java.net.URI)>", index: "0" }
+  - { method: "<java.io.RandomAccessFile: void <init>(java.lang.String,java.lang.String)>", index: "1" }
+  - { method: "<java.io.FileReader: void <init>(java.lang.String)>", index: "0" }
+  - { method: "<java.io.FileInputStream: void <init>(java.lang.String)>", index: "0" }
+  - { method: "<java.nio.file.Paths: java.nio.file.Path get(java.lang.String,java.lang.String[])>", index: "0" }
+  - { method: "<java.nio.file.Paths: java.nio.file.Path get(java.lang.String,java.lang.String[])>", index: "1" }
+  - { method: "<java.nio.file.Paths: java.nio.file.Path get(java.net.URI)>", index: "0" }
+  - { method: "<java.io.File: java.io.File createTempFile(java.lang.String,java.lang.String)>", index: "0" }
+  - { method: "<java.io.File: java.io.File createTempFile(java.lang.String,java.lang.String)>", index: "1" }
+  - { method: "<java.io.File: java.io.File createTempFile(java.lang.String,java.lang.String,java.io.File)>", index: "0" }
+  - { method: "<java.io.File: java.io.File createTempFile(java.lang.String,java.lang.String,java.io.File)>", index: "1" }
+  - { method: "<java.io.File: java.io.File createTempFile(java.lang.String,java.lang.String,java.io.File)>", index: "2" }
+  - { method: "<java.nio.file.Files: java.nio.file.Path createTempFile(java.nio.file.Path,java.lang.String,java.lang.String,java.nio.file.attribute.FileAttribute[])>", index: "1" }
+  - { method: "<java.nio.file.Files: java.nio.file.Path createTempFile(java.nio.file.Path,java.lang.String,java.lang.String,java.nio.file.attribute.FileAttribute[])>", index: "2" }
+  - { method: "<java.nio.file.Files: java.nio.file.Path createTempFile(java.lang.String,java.lang.String,java.nio.file.attribute.FileAttribute[])>", index: "1" }
+  - { method: "<java.nio.file.Files: java.nio.file.Path createTempFile(java.lang.String,java.lang.String,java.nio.file.attribute.FileAttribute[])>", index: "2" }
+  - { method: "<java.nio.file.Files: java.nio.file.Path createTempDirectory(java.nio.file.Path,java.lang.String,java.nio.file.attribute.FileAttribute[])>", index: "1" }
+  - { method: "<java.nio.file.Files: java.nio.file.Path createTempDirectory(java.lang.String,java.nio.file.attribute.FileAttribute[])>", index: "1" }
+  - { method: "<java.io.FileWriter: void <init>(java.lang.String)>", index: "0" }
+  - { method: "<java.io.FileWriter: void <init>(java.lang.String,boolean)>", index: "1" }
+  - { method: "<java.io.FileOutputStream: void <init>(java.lang.String)>", index: "0" }
+  - { method: "<java.io.FileOutputStream: void <init>(java.lang.String,boolean)>", index: "1" }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String)>", index: "0" }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String[])>", index: "0" }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String,java.lang.String[])>", index: "0" }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String,java.lang.String[])>", index: "1" }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String[],java.lang.String[])>", index: "0" }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String[],java.lang.String[])>", index: "1" }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String,java.lang.String[],java.io.File)>", index: "1" }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String,java.lang.String[],java.io.File)>", index: "2" }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String[],java.lang.String[],java.io.File)>", index: "1" }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String[],java.lang.String[],java.io.File)>", index: "2" }
+  - { method: "<java.lang.ProcessBuilder: void <init>(java.lang.String[])>", index: "0" }
+  - { method: "<java.lang.ProcessBuilder: void <init>(java.util.List)>", index: "0" }
+  - { method: "<java.lang.ProcessBuilder: java.lang.ProcessBuilder command(java.lang.String[])>", index: "0" }
+  - { method: "<java.lang.ProcessBuilder: java.lang.ProcessBuilder command(java.util.List)>", index: "0" }
+  - { method: "<javax.servlet.http.HttpServletResponse: void sendError(int,java.lang.String)>", index: "0" }
+  - { method: "<javax.servlet.http.HttpServletResponse: void setStatus(int,java.lang.String)>", index: "0" }
+  - { method: "<javax.servlet.http.HttpServletResponseWrapper: void sendError(int,java.lang.String)>", index: "0" }
+  - { method: "<javax.servlet.http.HttpServletResponseWrapper: void setStatus(int,java.lang.String)>", index: "0" }
+  - { method: "<javax.servlet.ServletOutputStream: void print(java.lang.String)>", index: "0" }
+  - { method: "<javax.servlet.ServletOutputStream: void println(java.lang.String)>", index: "0" }
+  - { method: "<java.io.PrintWriter: void write(java.lang.String)>", index: "0" }
+  - { method: "<java.io.PrintWriter: void write(java.lang.String,int,int)>", index: "2" }
+  - { method: "<java.io.PrintWriter: void write(char[])>", index: "0" }
+  - { method: "<java.io.PrintWriter: void write(char[],int,int)>", index: "2" }
+  - { method: "<java.io.PrintWriter: void print(char[])>", index: "0" }
+  - { method: "<java.io.PrintWriter: void print(java.lang.String)>", index: "0" }
+  - { method: "<java.io.PrintWriter: void print(java.lang.Object)>", index: "0" }
+  - { method: "<java.io.PrintWriter: void print(char)>", index: "0" }
+  - { method: "<java.io.PrintWriter: void println(char[])>", index: "0" }
+  - { method: "<java.io.PrintWriter: void println(java.lang.String)>", index: "0" }
+  - { method: "<java.io.PrintWriter: void println(java.lang.Object)>", index: "0" }
+  - { method: "<java.io.PrintWriter: void println(char)>", index: "0" }
+  - { method: "<java.io.PrintWriter: java.io.PrintWriter printf(java.util.Locale,java.lang.String,java.lang.Object[])>", index: "0" }
+  - { method: "<java.io.PrintWriter: java.io.PrintWriter printf(java.util.Locale,java.lang.String,java.lang.Object[])>", index: "1" }
+  - { method: "<java.io.PrintWriter: java.io.PrintWriter printf(java.lang.String,java.lang.Object[])>", index: "0" }
+  - { method: "<java.io.PrintWriter: java.io.PrintWriter printf(java.lang.String,java.lang.Object[])>", index: "1" }
+  - { method: "<java.io.PrintWriter: java.io.PrintWriter append(java.lang.CharSequence)>", index: "0" }
+  - { method: "<java.io.PrintWriter: java.io.PrintWriter append(java.lang.CharSequence,int,int)>", index: "2" }
+  - { method: "<java.io.PrintWriter: java.io.PrintWriter append(char)>", index: "0" }
+  - { method: "<java.io.PrintStream: java.io.PrintStream printf(java.lang.String,java.lang.Object[])>", index: "1" }
+  - { method: "<java.io.PrintStream: java.io.PrintStream printf(java.util.Locale,java.lang.String,java.lang.Object[])>", index: "1" }
+  - { method: "<java.sql.Statement: java.sql.ResultSet executeQuery(java.lang.String)>", index: "0" }
+  - { method: "<java.sql.Statement: boolean execute(java.lang.String)>", index: "0" }
+  - { method: "<java.sql.Statement: boolean execute(java.lang.String,int)>", index: "0" }
+  - { method: "<java.sql.Statement: boolean execute(java.lang.String,int[])>", index: "0" }
+  - { method: "<java.sql.Statement: boolean execute(java.lang.String,java.lang.String[])>", index: "0" }
+  - { method: "<java.sql.Statement: int executeUpdate(java.lang.String)>", index: "0" }
+  - { method: "<java.sql.Statement: int executeUpdate(java.lang.String,int)>", index: "0" }
+  - { method: "<java.sql.Statement: int executeUpdate(java.lang.String,int[])>", index: "0" }
+  - { method: "<java.sql.Statement: int executeUpdate(java.lang.String,java.lang.String[])>", index: "0" }
+  - { method: "<java.sql.Statement: long executeLargeUpdate(java.lang.String)>", index: "0" }
+  - { method: "<java.sql.Statement: long executeLargeUpdate(java.lang.String,int)>", index: "0" }
+  - { method: "<java.sql.Statement: long executeLargeUpdate(java.lang.String,int[])>", index: "0" }
+  - { method: "<java.sql.Statement: long executeLargeUpdate(java.lang.String,java.lang.String[])>", index: "0" }
+  - { method: "<java.sql.Statement: void addBatch(java.lang.String)>", index: "0" }
+  - { method: "<java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String)>", index: "0" }
+  - { method: "<java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String,int)>", index: "0" }
+  - { method: "<java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String,int[])>", index: "0" }
+  - { method: "<java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String,java.lang.String[])>", index: "0" }
+  - { method: "<java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String,int,int)>", index: "0" }
+  - { method: "<java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String,int,int,int)>", index: "0" }
+  - { method: "<java.sql.Connection: java.sql.CallableStatement prepareCall(java.lang.String)>", index: "0" }
+  - { method: "<java.sql.Connection: java.sql.CallableStatement prepareCall(java.lang.String,int,int)>", index: "0" }
+  - { method: "<java.sql.Connection: java.sql.CallableStatement prepareCall(java.lang.String,int,int,int)>", index: "0" }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: int update(java.lang.String)>", index: "0" }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: int[] batchUpdate(java.lang.String[])>", index: "0" }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: void execute(java.lang.String)>", index: "0" }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: java.lang.Object queryForObject(java.lang.String,java.lang.Class)>", index: "0" }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: java.util.List queryForList(java.lang.String)>", index: "0" }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: java.util.List queryForList(java.lang.String,java.lang.Class)>", index: "0" }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: java.util.Map queryForMap(java.lang.String)>", index: "0" }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: org.springframework.jdbc.support.rowset.SqlRowSet queryForRowSet(java.lang.String)>", index: "0" }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: java.lang.Object query(java.lang.String,org.springframework.jdbc.core.ResultSetExtractor)>", index: "0" }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: void query(java.lang.String,org.springframework.jdbc.core.RowCallbackHandler)>", index: "0" }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: java.util.List query(java.lang.String,org.springframework.jdbc.core.RowMapper)>", index: "0" }
+
+transfers:
+  - { method: "<java.lang.String: void <init>(byte[])>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: void <init>(byte[],int)>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: void <init>(byte[],int,int)>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: void <init>(byte[],int,int,int)>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: void <init>(byte[],int,int,java.lang.String)>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: void <init>(byte[],int,int,java.nio.charset.Charset)>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: void <init>(byte[],java.lang.String)>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: void <init>(byte[],java.nio.charset.Charset)>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: void <init>(char[])>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: void <init>(char[],int,int)>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: void <init>(int[],int,int)>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: void <init>(java.lang.String)>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: void <init>(java.lang.StringBuilder)>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: void <init>(java.lang.StringBuffer)>", from: "0", to: "base", type: "java.lang.String" }
+  - { method: "<java.lang.String: char charAt(int)>", from: "base", to: "result", type: "char" }
+  - { method: "<java.lang.String: int codePointAt(int)>", from: "base", to: "result", type: "int" }
+  - { method: "<java.lang.String: int codePointBefore(int)>", from: "base", to: "result", type: "int" }
+  - { method: "<java.lang.String: java.lang.String concat(java.lang.String)>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String copyValueOf(char[])>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String copyValueOf(char[],int,int)>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String format(java.util.Locale,java.lang.String,java.lang.Object[])>", from: "1", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String format(java.util.Locale,java.lang.String,java.lang.Object[])>", from: "2[*]", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>", from: "1[*]", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: byte[] getBytes()>", from: "base", to: "result", type: "byte[]" }
+  - { method: "<java.lang.String: byte[] getBytes(java.nio.charset.Charset)>", from: "base", to: "result", type: "byte[]" }
+  - { method: "<java.lang.String: void getBytes(int,int,byte[],int)>", from: "base", to: "2", type: "byte[]" }
+  - { method: "<java.lang.String: byte[] getBytes(java.lang.String)>", from: "base", to: "result", type: "byte[]" }
+  - { method: "<java.lang.String: void getChars(int,int,char[],int)>", from: "base", to: "2", type: "char[]" }
+  - { method: "<java.lang.String: java.lang.String intern()>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String join(java.lang.CharSequence,java.lang.CharSequence[])>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String join(java.lang.CharSequence,java.lang.CharSequence[])>", from: "1[*]", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String join(java.lang.CharSequence,java.lang.Iterable)>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String join(java.lang.CharSequence,java.lang.Iterable)>", from: "1", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String replace(char,char)>", from: "1", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String replace(char,char)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>", from: "1", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>", from: "1", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String replaceAll(java.lang.String,java.lang.String)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String replaceFirst(java.lang.String,java.lang.String)>", from: "1", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String replaceFirst(java.lang.String,java.lang.String)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String[] split(java.lang.String)>", from: "base", to: "result[*]", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String[] split(java.lang.String,int)>", from: "base", to: "result[*]", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.CharSequence subSequence(int,int)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String substring(int)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String substring(int,int)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: char[] toCharArray()>", from: "base", to: "result", type: "char[]" }
+  - { method: "<java.lang.String: java.lang.String toLowerCase()>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String toLowerCase(java.util.Locale)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String toUpperCase()>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String toUpperCase(java.util.Locale)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String trim()>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String valueOf(boolean)>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String valueOf(char)>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String valueOf(char[])>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String valueOf(char[],int,int)>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String valueOf(double)>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String valueOf(float)>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String valueOf(int)>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String valueOf(long)>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String valueOf(java.lang.Object)>", from: "0", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.StringBuffer: void <init>(java.lang.String)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: void <init>(java.lang.CharSequence)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(boolean)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(char)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(int)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(long)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(char[])>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(char[],int,int)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(double)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(float)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.CharSequence)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.CharSequence,int,int)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.Object)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.StringBuffer)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer appendCodePoint(int)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: char charAt(int)>", from: "base", to: "result", type: "char" }
+  - { method: "<java.lang.StringBuffer: void getChars(int,int,char[],int)>", from: "base", to: "2", type: "char[]" }
+  - { method: "<java.lang.StringBuffer: int codePointAt(int)>", from: "base", to: "result", type: "int" }
+  - { method: "<java.lang.StringBuffer: int codePointBefore(int)>", from: "base", to: "result", type: "int" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer insert(int,boolean)>", from: "1", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer insert(int,char)>", from: "1", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer insert(int,char[])>", from: "1", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer insert(int,char[],int,int)>", from: "1", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer insert(int,double)>", from: "1", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer insert(int,float)>", from: "1", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer insert(int,int)>", from: "1", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer insert(int,long)>", from: "1", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer insert(int,java.lang.CharSequence)>", from: "1", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer insert(int,java.lang.CharSequence,int,int)>", from: "1", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer insert(int,java.lang.Object)>", from: "1", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer insert(int,java.lang.String)>", from: "1", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer replace(int,int,java.lang.String)>", from: "2", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: void setCharAt(int,char)>", from: "1", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.CharSequence subSequence(int,int)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.StringBuffer: java.lang.String substring(int)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.StringBuffer: java.lang.String substring(int,int)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.StringBuffer: java.lang.String toString()>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.StringBuilder: void <init>(java.lang.String)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: void <init>(java.lang.CharSequence)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder append(boolean)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder append(char)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder append(int)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder append(long)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder append(char[])>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder append(char[],int,int)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder append(double)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder append(float)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.CharSequence)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.CharSequence,int,int)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.StringBuffer)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder appendCodePoint(int)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: char charAt(int)>", from: "base", to: "result", type: "char" }
+  - { method: "<java.lang.StringBuilder: void getChars(int,int,char[],int)>", from: "base", to: "2", type: "char[]" }
+  - { method: "<java.lang.StringBuilder: int codePointAt(int)>", from: "base", to: "result", type: "int" }
+  - { method: "<java.lang.StringBuilder: int codePointBefore(int)>", from: "base", to: "result", type: "int" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder insert(int,boolean)>", from: "1", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder insert(int,char)>", from: "1", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder insert(int,char[])>", from: "1", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder insert(int,char[],int,int)>", from: "1", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder insert(int,double)>", from: "1", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder insert(int,float)>", from: "1", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder insert(int,int)>", from: "1", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder insert(int,long)>", from: "1", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder insert(int,java.lang.CharSequence)>", from: "1", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder insert(int,java.lang.CharSequence,int,int)>", from: "1", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder insert(int,java.lang.Object)>", from: "1", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder insert(int,java.lang.String)>", from: "1", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.StringBuilder replace(int,int,java.lang.String)>", from: "2", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: void setCharAt(int,char)>", from: "1", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.CharSequence subSequence(int,int)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.StringBuilder: java.lang.String substring(int)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.StringBuilder: java.lang.String substring(int,int)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.StringBuilder: java.lang.String toString()>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.String: java.lang.String concat(java.lang.String)>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.lang.AbstractStringBuilder: java.lang.AbstractStringBuilder append(java.lang.Object)>", from: "0", to: "base", type: "java.lang.AbstractStringBuilder" }
+  - { method: "<java.lang.AbstractStringBuilder: java.lang.AbstractStringBuilder append(java.lang.String)>", from: "0", to: "base", type: "java.lang.AbstractStringBuilder" }
+  - { method: "<java.lang.AbstractStringBuilder: java.lang.AbstractStringBuilder append(java.lang.StringBuffer)>", from: "0", to: "base", type: "java.lang.AbstractStringBuilder" }
+  - { method: "<java.lang.AbstractStringBuilder: java.lang.AbstractStringBuilder append(java.lang.AbstractStringBuilder)>", from: "0", to: "base", type: "java.lang.AbstractStringBuilder" }
+  - { method: "<java.lang.AbstractStringBuilder: java.lang.AbstractStringBuilder append(java.lang.CharSequence)>", from: "0", to: "base", type: "java.lang.AbstractStringBuilder" }
+  - { method: "<java.lang.AbstractStringBuilder: java.lang.Appendable append(java.lang.CharSequence)>", from: "0", to: "base", type: "java.lang.AbstractStringBuilder" }
+  - { method: "<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.AbstractStringBuilder)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.AbstractStringBuilder append(java.lang.CharSequence)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.AbstractStringBuilder append(java.lang.AbstractStringBuilder)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.AbstractStringBuilder append(java.lang.StringBuffer)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.AbstractStringBuilder append(java.lang.String)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.AbstractStringBuilder append(java.lang.Object)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuffer: java.lang.Appendable append(java.lang.CharSequence)>", from: "0", to: "base", type: "java.lang.StringBuffer" }
+  - { method: "<java.lang.StringBuilder: java.lang.AbstractStringBuilder append(java.lang.CharSequence)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.AbstractStringBuilder append(java.lang.StringBuffer)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.AbstractStringBuilder append(java.lang.String)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.AbstractStringBuilder append(java.lang.Object)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.StringBuilder: java.lang.Appendable append(java.lang.CharSequence)>", from: "0", to: "base", type: "java.lang.StringBuilder" }
+  - { method: "<java.lang.AbstractStringBuilder: java.lang.String toString()>", from: "base", to: "result", type: "java.lang.String" }
+  - { method: "<java.util.Enumeration: java.lang.Object nextElement()>", from: "base", to: "result", type: "java.lang.String" }
+
+callSiteMode: true
+

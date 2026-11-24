@@ -1,0 +1,77 @@
+[
+  {
+    "flow_id": "00438-exec",
+    "case": "BenchmarkTest00438",
+    "cwe": 89,
+    "cwe_name": "SQL Injection",
+    "expected": "TP",
+    "flow_facts": "Source: <BenchmarkTest00438: void doPost(...)>/param -- request.getParameter(\"BenchmarkTest00438\") at line 43.\nSink: <BenchmarkTest00438: void doPost(...)> statement.execute(sql, new String[]{\"username\",\"password\"}) at line 58 (argument 0 = sql).\nPath: param -> bar = (7*42)-num > 200 ? \"This should never happen\" : param (num=106) -> sql = \"SELECT * from USERS where USERNAME='foo' and PASSWORD='...'\" + bar + \"'\" -> statement.execute(sql).",
+    "slice": "39:     public void doPost(HttpServletRequest request, HttpServletResponse response)\n40:             throws ServletException, IOException {\n41:         response.setContentType(\"text/html;charset=UTF-8\");\n42: \n43:         String param = request.getParameter(\"BenchmarkTest00438\");\n44:         if (param == null) param = \"\";\n45: \n46:         String bar;\n47: \n48:         // Simple ? condition that assigns param to bar on false condition\n49:         int num = 106;\n50: \n51:         bar = (7 * 42) - num > 200 ? \"This should never happen\" : param;\n52: \n53:         String sql = \"SELECT * from USERS where USERNAME='foo' and PASSWORD='\" + bar + \"'\";\n54: \n55:         try {\n56:             java.sql.Statement statement =\n57:                     org.owasp.benchmark.helpers.DatabaseHelper.getSqlStatement();\n58:             statement.execute(sql, new String[] {\"username\", \"password\"});\n59:             org.owasp.benchmark.helpers.DatabaseHelper.printResults(statement, sql, response);\n60:         } catch (java.sql.SQLException e) {\n61:             if (org.owasp.benchmark.helpers.DatabaseHelper.hideSQLErrors) {\n62:                 response.getWriter().println(\"Error processing request.\");\n63:             } else throw new ServletException(e);\n64:         }\n65:     }\n66: }",
+    "slice_file": "BenchmarkTest00438.java",
+    "slice_lines": [
+      39,
+      66
+    ],
+    "sink_line": 58
+  },
+  {
+    "flow_id": "01057-write",
+    "case": "BenchmarkTest01057",
+    "cwe": 79,
+    "cwe_name": "Cross-Site Scripting (XSS)",
+    "expected": "TP",
+    "flow_facts": "Source: request.getHeader(\"Referer\") in doPost at line 47, URL-decoded at line 51.\nSink: response.getWriter().write(bar) at line 54.\nPath: param (Referer header) -> bar = new Test().doSomething(request, param) -> doSomething returns param when (7*42)-num <= 200 (num=106) -> response.getWriter().write(bar). No encoding is applied to bar.",
+    "slice": "39:     public void doPost(HttpServletRequest request, HttpServletResponse response)\n40:             throws ServletException, IOException {\n41:         response.setContentType(\"text/html;charset=UTF-8\");\n42: \n43:         String param = \"\";\n44:         if (request.getHeader(\"Referer\") != null) {\n45:             param = request.getHeader(\"Referer\");\n46:         }\n47: \n48:         // URL Decode the header value since req.getHeader() doesn't. Unlike req.getParameter().\n49:         param = java.net.URLDecoder.decode(param, \"UTF-8\");\n50: \n51:         String bar = new Test().doSomething(request, param);\n52: \n53:         response.setHeader(\"X-XSS-Protection\", \"0\");\n54:         response.getWriter().write(bar);\n55:     } // end doPost\n56: \n57:     private class Test {\n58: \n59:         public String doSomething(HttpServletRequest request, String param)\n60:                 throws ServletException, IOException {\n61: \n62:             String bar;\n63: \n64:             // Simple ? condition that assigns param to bar on false condition\n65:             int num = 106;\n66: \n67:             bar = (7 * 42) - num > 200 ? \"This should never happen\" : param;\n68: \n69:             return bar;\n70:         }\n71:     } // end innerclass Test",
+    "slice_file": "BenchmarkTest01057.java",
+    "slice_lines": [
+      39,
+      71
+    ],
+    "sink_line": 54
+  },
+  {
+    "flow_id": "01878-prepare",
+    "case": "BenchmarkTest01878",
+    "cwe": 89,
+    "cwe_name": "SQL Injection",
+    "expected": "FP",
+    "flow_facts": "Sources: (a) request.getRequestURL() in doGet at line 42; (b) theCookie.getValue() in doPost at line 60 (cookie value, URL-decoded into param).\nSink: connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS) at line 74 (argument 0 = sql), followed by statement.setString(1, \"foo\") and statement.execute().\nPath: param -> bar = doSomething(request, param) -> sql = \"SELECT * from USERS where USERNAME=? and PASSWORD='...'\" + bar + \"'\" -> prepareStatement(sql).",
+    "slice": "50:     public void doPost(HttpServletRequest request, HttpServletResponse response)\n51:             throws ServletException, IOException {\n52:         response.setContentType(\"text/html;charset=UTF-8\");\n53: \n54:         javax.servlet.http.Cookie[] theCookies = request.getCookies();\n55: \n56:         String param = \"noCookieValueSupplied\";\n57:         if (theCookies != null) {\n58:             for (javax.servlet.http.Cookie theCookie : theCookies) {\n59:                 if (theCookie.getName().equals(\"BenchmarkTest01878\")) {\n60:                     param = java.net.URLDecoder.decode(theCookie.getValue(), \"UTF-8\");\n61:                     break;\n62:                 }\n63:             }\n64:         }\n65: \n66:         String bar = doSomething(request, param);\n67: \n68:         String sql = \"SELECT * from USERS where USERNAME=? and PASSWORD='\" + bar + \"'\";\n69: \n70:         try {\n71:             java.sql.Connection connection =\n72:                     org.owasp.benchmark.helpers.DatabaseHelper.getSqlConnection();\n73:             java.sql.PreparedStatement statement =\n74:                     connection.prepareStatement(sql, java.sql.Statement.RETURN_GENERATED_KEYS);\n75:             statement.setString(1, \"foo\");\n76:             statement.execute();\n77:             org.owasp.benchmark.helpers.DatabaseHelper.printResults(statement, sql, response);\n78:         } catch (java.sql.SQLException e) {\n79:             if (org.owasp.benchmark.helpers.DatabaseHelper.hideSQLErrors) {\n80:                 response.getWriter().println(\"Error processing request.\");\n81:             } else throw new ServletException(e);\n82:         }\n83:     } // end doPost\n84: \n85:     private static String doSomething(HttpServletRequest request, String param)\n86:             throws ServletException, IOException {\n87: \n88:         String bar;\n89: \n90:         // Simple ? condition that assigns constant to bar on true condition\n91:         int num = 106;\n92: \n93:         bar = (7 * 18) + num > 200 ? \"This_should_always_happen\" : param;\n94: \n95:         return bar;\n96:     }",
+    "slice_file": "BenchmarkTest01878.java",
+    "slice_lines": [
+      50,
+      96
+    ],
+    "sink_line": 74
+  },
+  {
+    "flow_id": "01237-println",
+    "case": "BenchmarkTest01237",
+    "cwe": 22,
+    "cwe_name": "Path Traversal",
+    "expected": "FP",
+    "flow_facts": "Source: request.getParameter(\"BenchmarkTest01237\") at line 43.\nSink: response.getWriter().println(\"Access to file: '\" + ESAPI.encoder().encodeForHTML(fileTarget.toString()) + \"' created.\") at line 67.\nPath: param -> bar = new Test().doSomething(request, param) -> fileURI = \"file:\" + ... + Utils.TESTFILES_DIR.replace(...) + bar -> fileTarget = new File(fileURI) -> fileTarget.toString() -> ESAPI.encoder().encodeForHTML(...) -> println. The case's file sink (new File(fileURI)) is a separate statement, not this sink.",
+    "slice": "39:     public void doPost(HttpServletRequest request, HttpServletResponse response)\n40:             throws ServletException, IOException {\n41:         response.setContentType(\"text/html;charset=UTF-8\");\n42: \n43:         String param = request.getParameter(\"BenchmarkTest01237\");\n44:         if (param == null) param = \"\";\n45: \n46:         String bar = new Test().doSomething(request, param);\n47: \n48:         // FILE URIs are tricky because they are different between Mac and Windows because of lack\n49:         // of standardization.\n50:         // Mac requires an extra slash for some reason.\n51:         String startURIslashes = \"\";\n52:         if (System.getProperty(\"os.name\").indexOf(\"Windows\") != -1)\n53:             if (System.getProperty(\"os.name\").indexOf(\"Windows\") != -1) startURIslashes = \"/\";\n54:             else startURIslashes = \"//\";\n55: \n56:         try {\n57:             java.net.URI fileURI =\n58:                     new java.net.URI(\n59:                             \"file:\"\n60:                                     + startURIslashes\n61:                                     + org.owasp.benchmark.helpers.Utils.TESTFILES_DIR\n62:                                             .replace('\\\\', '/')\n63:                                             .replace(' ', '_')\n64:                                     + bar);\n65:             java.io.File fileTarget = new java.io.File(fileURI);\n66:             response.getWriter()\n67:                     .println(\n68:                             \"Access to file: '\"\n69:                                     + org.owasp\n70:                                             .esapi\n71:                                             .ESAPI\n72:                                             .encoder()\n73:                                             .encodeForHTML(fileTarget.toString())\n74:                                     + \"' created.\");\n75:             if (fileTarget.exists()) {\n76:                 response.getWriter().println(\" And file already exists.\");\n77:             } else {\n78:                 response.getWriter().println(\" But file doesn't exist yet.\");\n79:             }\n80:         } catch (java.net.URISyntaxException e) {\n81:             throw new ServletException(e);\n82:         }\n83:     } // end doPost\n84: \n85:     private class Test {\n86: \n87:         public String doSomething(HttpServletRequest request, String param)\n88:                 throws ServletException, IOException {\n89: \n90:             String bar;\n91: \n92:             // Simple if statement that assigns constant to bar on true condition\n93:             int num = 86;\n94:             if ((7 * 42) - num > 200) bar = \"This_should_always_happen\";\n95:             else bar = param;\n96: \n97:             return bar;\n98:         }",
+    "slice_file": "BenchmarkTest01237.java",
+    "slice_lines": [
+      39,
+      98
+    ],
+    "sink_line": 67
+  },
+  {
+    "flow_id": "00411-exec",
+    "case": "BenchmarkTest00411",
+    "cwe": 78,
+    "cwe_name": "OS Command Injection",
+    "expected": "FP",
+    "flow_facts": "Source: request.getParameter(\"BenchmarkTest00411\") at line 43.\nSink: Runtime.exec(cmd, argsEnv) at line 77 (argument 0 = cmd).\nPath: param -> a18204 -> StringBuilder -> HashMap put/get -> substring -> Base64 encode/decode -> split (chain a..f, result f18204 is never used afterwards) ; bar = thing.doSomething(g18204) where g18204 = \"barbarians_at_the_gate\" (a constant); cmd = Utils.getInsecureOSCommandString(this.getClass().getClassLoader()); argsEnv = {bar}; r.exec(cmd, argsEnv).",
+    "slice": "39:     public void doPost(HttpServletRequest request, HttpServletResponse response)\n40:             throws ServletException, IOException {\n41:         response.setContentType(\"text/html;charset=UTF-8\");\n42: \n43:         String param = request.getParameter(\"BenchmarkTest00411\");\n44:         if (param == null) param = \"\";\n45: \n46:         // Chain a bunch of propagators in sequence\n47:         String a18204 = param; // assign\n48:         StringBuilder b18204 = new StringBuilder(a18204); // stick in stringbuilder\n49:         b18204.append(\" SafeStuff\"); // append some safe content\n50:         b18204.replace(\n51:                 b18204.length() - \"Chars\".length(),\n52:                 b18204.length(),\n53:                 \"Chars\"); // replace some of the end content\n54:         java.util.HashMap<String, Object> map18204 = new java.util.HashMap<String, Object>();\n55:         map18204.put(\"key18204\", b18204.toString()); // put in a collection\n56:         String c18204 = (String) map18204.get(\"key18204\"); // get it back out\n57:         String d18204 = c18204.substring(0, c18204.length() - 1); // extract most of it\n58:         String e18204 =\n59:                 new String(\n60:                         org.apache.commons.codec.binary.Base64.decodeBase64(\n61:                                 org.apache.commons.codec.binary.Base64.encodeBase64(\n62:                                         d18204.getBytes()))); // B64 encode and decode it\n63:         String f18204 = e18204.split(\" \")[0]; // split it on a space\n64:         org.owasp.benchmark.helpers.ThingInterface thing =\n65:                 org.owasp.benchmark.helpers.ThingFactory.createThing();\n66:         String g18204 = \"barbarians_at_the_gate\"; // This is static so this whole flow is 'safe'\n67:         String bar = thing.doSomething(g18204); // reflection\n68: \n69:         String cmd =\n70:                 org.owasp.benchmark.helpers.Utils.getInsecureOSCommandString(\n71:                         this.getClass().getClassLoader());\n72: \n73:         String[] argsEnv = {bar};\n74:         Runtime r = Runtime.getRuntime();\n75: \n76:         try {\n77:             Process p = r.exec(cmd, argsEnv);\n78:             org.owasp.benchmark.helpers.Utils.printOSCommandResults(p, response);\n79:         } catch (IOException e) {\n80:             System.out.println(\"Problem executing cmdi - TestCase\");\n81:             response.getWriter()\n82:                     .println(org.owasp.esapi.ESAPI.encoder().encodeForHTML(e.getMessage()));\n83:             return;\n84:         }\n85:     }\n86: }",
+    "slice_file": "BenchmarkTest00411.java",
+    "slice_lines": [
+      39,
+      86
+    ],
+    "sink_line": 77
+  }
+]

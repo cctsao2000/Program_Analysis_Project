@@ -20,6 +20,14 @@ baseline verdict (flagged) is kept.
 
 - Provider: SoCLaaS (OpenAI-compatible API). API key **only** from the
   `SOCLAAS_API_KEY` environment variable. Never commit a key.
+- Model (fixed 2026-11-24, Q4 resolved): **`qwen3-coder-next`** — Qwen 3
+  Coder Next 80B A3B, the largest code-specialized chat model on SoCLaaS
+  (262k context; input $0.269/MTok, output $1.21/MTok — a ~700-flow batch
+  costs on the order of $1, so capability, not price, decided it).
+  Fallback if the pilot shows weak reasoning on the constant-condition
+  FPs: `qwen3.8:27b` with `reasoning_effort` medium/xhigh. Avoid the
+  `x-test-*` models for scored runs (labeled test). The `default`
+  alias is `qwen3.6:35b` (general, not code-specialized).
 - Temperature: 0 (deterministic). Record the exact model ID returned by
   `GET /v1/models`, the prompt text (this file, by commit), and the
   date of each run.
@@ -54,18 +62,38 @@ different vulnerability class does not count.
 
 Rules:
 1. Judge only the flow described above and the code in the slice.
-2. If you claim the flow is a false positive, you MUST cite the exact
-   sanitizer API and the exact line number where it is applied.
-   Do not cite APIs or lines that are not in the slice.
+2. If you claim the flow is a false positive, you MUST cite evidence:
+   a sanitizer (kind `"sanitizer"`: the exact API and the exact line
+   number where it is applied) or a constant / dead value (kind
+   `"constant"`: the exact line number where the constant is assigned
+   or where the constant condition appears). Do not cite APIs or
+   lines that are not in the slice.
 3. If the slice does not contain enough information to decide, say
    "uncertain" rather than guessing.
 4. A constant, hard-coded, or empty value reaching the sink is not
    attacker-controlled; say so explicitly if that is the case.
 5. Keep the reasoning to at most 3 sentences.
+6. Evaluate constant branch conditions: if a condition is built only
+   from literals (numbers, arithmetic on literals, e.g.
+   `(7*18)+106 > 200`), compute its value. A branch the condition
+   rules out is unreachable, and a value that only flows through a
+   dead branch does not reach the sink. Do not treat a ternary or
+   `if` as genuinely conditional when its condition is a constant
+   expression.
 
-Reply with EXACTLY one JSON object, no other text:
+7. Verdict meanings: `"TP"` means the flow IS a real, exploitable
+   vulnerability of this CWE (the analyzer was right). `"FP"` means
+   the flow is NOT a real vulnerability (the analyzer's report is a
+   false alarm). Your verdict MUST agree with your reasoning: if your
+   reasoning concludes there is no vulnerability, the verdict is
+   `"FP"`; if it concludes there is a real vulnerability, the verdict
+   is `"TP"`.
+
+Reply with EXACTLY one JSON object, no other text, no markdown fences.
+Inside the `reasoning` string, do not use double-quote characters;
+use single quotes if you need to quote code.
 {"verdict": "TP" | "FP" | "uncertain",
- "sanitizer_evidence": {"api": "<exact API name as it appears in the code>", "line": <integer>} | null,
+ "evidence": {"kind": "sanitizer" | "constant", "api": "<exact API name as it appears in the code, or null for constant>", "line": <integer>} | null,
  "reasoning": "<at most 3 sentences>",
  "confidence": <number between 0 and 1>}
 ```

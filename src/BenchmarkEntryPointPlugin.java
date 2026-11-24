@@ -85,6 +85,11 @@ public class BenchmarkEntryPointPlugin implements Plugin {
             if (testClass.isAbstract()) {
                 continue;
             }
+            String onlyClass = System.getenv("CS6215_ENTRY_CLASS");
+            if (onlyClass != null && !onlyClass.isEmpty()
+                    && !testClass.getName().equals(onlyClass)) {
+                continue;
+            }
             for (String name : List.of("doGet", "doPost")) {
                 JMethod entry = testClass.getDeclaredMethod(name);
                 if (entry == null) {
