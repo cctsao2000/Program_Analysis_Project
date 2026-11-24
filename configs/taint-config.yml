@@ -1,0 +1,323 @@
+# Draft Tai-e taint configuration for the 4 CWE categories under study:
+#   CWE-89  SQL injection        (sinks: java.sql + Spring JdbcTemplate)
+#   CWE-79  Cross-site scripting (sinks: PrintWriter / servlet output)
+#   CWE-22  Path traversal       (sinks: java.io / java.nio.file)
+#   CWE-78  Command injection    (sinks: Runtime.exec / ProcessBuilder)
+#
+# STATUS (2026-11-18): entry-point strategy, servlet-interface sources
+# and SQL sinks RESOLVED from Tai-e's own sources (see PILOT.md for the
+# evidence trail); NOT YET RUN against OWASP BenchmarkJava -- the
+# 8-case pilot in PILOT.md is the validation step, run on a machine
+# with direct internet access.
+#
+# call-site-mode: true is load-bearing. The servlet entry-point plugin
+# (src/BenchmarkEntryPointPlugin.java) supplies mock objects of
+# interface type for HttpServletRequest/Response, on which Tai-e's
+# virtual dispatch finds no concrete callee (ClassHierarchyImpl.
+# lookupMethod skips abstract methods). In call-site mode, sources,
+# sinks and transfers fire from the method reference at the call site
+# in a reachable method, so no resolved call edge is needed
+# (SourceHandler / SinkHandler / TransferHandler, Tai-e commit
+# 407994d). Without this flag the servlet runs would report zero flows.
+call-site-mode: true
+
+# Design note: sanitizers are deliberately NOT configured here. The
+# baseline is meant to over-approximate; recognising sanitizers
+# (e.g. ESAPI encoding, PreparedStatement binding) is the LLM
+# adjudicator's job, and the comparison measures how well it does it.
+# An extension experiment may add verified sanitizer entries and
+# re-run Tai-e (see prompts/adjudicate.md and README.md).
+
+sources:
+  # --- javax.servlet wrappers (source: commonly-used-taint-config/
+  # --- source/injection/javax/javax-servlet/ServletRequestWrapper.yml)
+  - { kind: call, method: "<javax.servlet.ServletRequestWrapper: java.lang.String getContentType()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.ServletRequestWrapper: java.lang.String getLocalName()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.ServletRequestWrapper: java.lang.String getParameter(java.lang.String)>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.ServletRequestWrapper: java.util.Map getParameterMap()>", index: result, type: "java.util.Map" }
+  - { kind: call, method: "<javax.servlet.ServletRequestWrapper: java.util.Enumeration getParameterNames()>", index: result, type: "java.util.Enumeration" }
+  - { kind: call, method: "<javax.servlet.ServletRequestWrapper: java.lang.String[] getParameterValues(java.lang.String)>", index: result, type: "java.lang.String[]" }
+  - { kind: call, method: "<javax.servlet.ServletRequestWrapper: java.lang.String getRemoteHost()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.ServletRequestWrapper: java.lang.String getServerName()>", index: result, type: "java.lang.String" }
+
+  # --- javax.servlet.http wrappers (source: commonly-used-taint-config/
+  # --- source/injection/javax/javax-servlet/HttpServletRequestWrapper.yml)
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getContentType()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequestWrapper: javax.servlet.http.Cookie[] getCookies()>", index: result, type: "javax.servlet.http.Cookie[]" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getHeader(java.lang.String)>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequestWrapper: java.util.Enumeration getHeaderNames()>", index: result, type: "java.util.Enumeration" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequestWrapper: java.util.Enumeration getHeaders(java.lang.String)>", index: result, type: "java.util.Enumeration" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getLocalName()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getParameter(java.lang.String)>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequestWrapper: java.util.Map getParameterMap()>", index: result, type: "java.util.Map" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequestWrapper: java.util.Enumeration getParameterNames()>", index: result, type: "java.util.Enumeration" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequestWrapper: java.lang.String[] getParameterValues(java.lang.String)>", index: result, type: "java.lang.String[]" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getPathInfo()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getPathTranslated()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getQueryString()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getRemoteHost()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getRemoteUser()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getRequestURI()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequestWrapper: java.lang.StringBuffer getRequestURL()>", index: result, type: "java.lang.StringBuffer" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getServerName()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequestWrapper: java.lang.String getServletPath()>", index: result, type: "java.lang.String" }
+
+  # --- Cookies (source: commonly-used-taint-config/
+  # --- source/injection/javax/javax-servlet/Cookie.yml)
+  - { kind: call, method: "<javax.servlet.http.Cookie: java.lang.String getComment()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.http.Cookie: java.lang.String getDomain()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.http.Cookie: java.lang.String getName()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.http.Cookie: java.lang.String getPath()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.http.Cookie: java.lang.String getValue()>", index: result, type: "java.lang.String" }
+
+  # --- javax.servlet.http.HttpServletRequest interface (RESOLVED
+  # --- 2026-11-18, see PILOT.md). The Wrapper entries above are NOT
+  # --- enough: BenchmarkJava servlets call getParameter()/getHeader()/
+  # --- getCookies() on the HttpServletRequest *interface* (2,071 test
+  # --- files). In call-site mode the taint source fires from the
+  # --- method reference at the call site, which IS the interface
+  # --- method here, so exact interface entries match. The matching
+  # --- entries below mirror the Wrapper lists method-for-method.
+  # --- ServletRequest (superinterface) entries cover the same calls
+  # --- made through that type.
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequest: java.lang.String getContentType()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequest: javax.servlet.http.Cookie[] getCookies()>", index: result, type: "javax.servlet.http.Cookie[]" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequest: java.lang.String getHeader(java.lang.String)>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequest: java.util.Enumeration getHeaderNames()>", index: result, type: "java.util.Enumeration" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequest: java.util.Enumeration getHeaders(java.lang.String)>", index: result, type: "java.util.Enumeration" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequest: java.lang.String getLocalName()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequest: java.lang.String getParameter(java.lang.String)>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequest: java.util.Map getParameterMap()>", index: result, type: "java.util.Map" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequest: java.util.Enumeration getParameterNames()>", index: result, type: "java.util.Enumeration" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequest: java.lang.String[] getParameterValues(java.lang.String)>", index: result, type: "java.lang.String[]" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequest: java.lang.String getPathInfo()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequest: java.lang.String getPathTranslated()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequest: java.lang.String getQueryString()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequest: java.lang.String getRemoteHost()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequest: java.lang.String getRemoteUser()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequest: java.lang.String getRequestURI()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequest: java.lang.StringBuffer getRequestURL()>", index: result, type: "java.lang.StringBuffer" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequest: java.lang.String getServerName()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.http.HttpServletRequest: java.lang.String getServletPath()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.ServletRequest: java.lang.String getContentType()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.ServletRequest: java.lang.String getLocalName()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.ServletRequest: java.lang.String getParameter(java.lang.String)>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.ServletRequest: java.util.Map getParameterMap()>", index: result, type: "java.util.Map" }
+  - { kind: call, method: "<javax.servlet.ServletRequest: java.util.Enumeration getParameterNames()>", index: result, type: "java.util.Enumeration" }
+  - { kind: call, method: "<javax.servlet.ServletRequest: java.lang.String[] getParameterValues(java.lang.String)>", index: result, type: "java.lang.String[]" }
+  - { kind: call, method: "<javax.servlet.ServletRequest: java.lang.String getRemoteHost()>", index: result, type: "java.lang.String" }
+  - { kind: call, method: "<javax.servlet.ServletRequest: java.lang.String getServerName()>", index: result, type: "java.lang.String" }
+
+  # KNOWN GAP (2026-11-18, measured on the 240-case sample): sources
+  # whose value is extracted through an array or a Map do NOT
+  # propagate taint in this configuration, because the source call
+  # itself is unresolved (interface-typed mock receiver) so the
+  # result variable never holds a real array/Map object for the
+  # ARRAY-kind source / Map.get transfer to attach taint to. Affected
+  # shapes: getParameterValues()[0] and getParameterMap().get()[0]
+  # (32 of 120 sampled vulnerable cases use only these shapes; the
+  # other 88 use getParameter/getHeader/getCookies or the
+  # SeparateClassRequest helper, which DO work). getParameterNames()
+  # IS covered via the Enumeration.nextElement() transfer below.
+  # Candidate fix for the pilot's second round: a concrete stub
+  # HttpServletRequest whose getParameterValues() returns a real
+  # String[1] and whose getParameterMap() returns a pre-loaded Map;
+  # see PILOT.md. Do not silently count these cases as true
+  # negatives in the pilot -- they are a known baseline blind spot.
+
+sinks:
+  # --- CWE-22 path traversal (source: commonly-used-taint-config/
+  # --- sink/injection/java/path-traversal/path-traversal.yml)
+  - { method: "<java.io.File: void <init>(java.lang.String)>", index: 0 }
+  - { method: "<java.io.File: void <init>(java.lang.String,java.lang.String)>", index: 0 }
+  - { method: "<java.io.File: void <init>(java.lang.String,java.lang.String)>", index: 1 }
+  - { method: "<java.io.File: void <init>(java.io.File,java.lang.String)>", index: 0 }
+  - { method: "<java.io.File: void <init>(java.net.URI)>", index: 0 }
+  - { method: "<java.io.RandomAccessFile: void <init>(java.lang.String,java.lang.String)>", index: 1 }
+  - { method: "<java.io.FileReader: void <init>(java.lang.String)>", index: 0 }
+  - { method: "<java.io.FileInputStream: void <init>(java.lang.String)>", index: 0 }
+  - { method: "<java.nio.file.Paths: java.nio.file.Path get(java.lang.String,java.lang.String[])>", index: 0 }
+  - { method: "<java.nio.file.Paths: java.nio.file.Path get(java.lang.String,java.lang.String[])>", index: 1 }
+  - { method: "<java.nio.file.Paths: java.nio.file.Path get(java.net.URI)>", index: 0 }
+  - { method: "<java.io.File: java.io.File createTempFile(java.lang.String,java.lang.String)>", index: 0 }
+  - { method: "<java.io.File: java.io.File createTempFile(java.lang.String,java.lang.String)>", index: 1 }
+  - { method: "<java.io.File: java.io.File createTempFile(java.lang.String,java.lang.String,java.io.File)>", index: 0 }
+  - { method: "<java.io.File: java.io.File createTempFile(java.lang.String,java.lang.String,java.io.File)>", index: 1 }
+  - { method: "<java.io.File: java.io.File createTempFile(java.lang.String,java.lang.String,java.io.File)>", index: 2 }
+  - { method: "<javax.activation.FileDataSource: void <init>(java.lang.String)>", index: 0 }
+  - { method: "<java.nio.file.Files: java.nio.file.Path createTempFile(java.nio.file.Path,java.lang.String,java.lang.String,java.nio.file.attribute.FileAttribute[])>", index: 1 }
+  - { method: "<java.nio.file.Files: java.nio.file.Path createTempFile(java.nio.file.Path,java.lang.String,java.lang.String,java.nio.file.attribute.FileAttribute[])>", index: 2 }
+  - { method: "<java.nio.file.Files: java.nio.file.Path createTempFile(java.lang.String,java.lang.String,java.nio.file.attribute.FileAttribute[])>", index: 1 }
+  - { method: "<java.nio.file.Files: java.nio.file.Path createTempFile(java.lang.String,java.lang.String,java.nio.file.attribute.FileAttribute[])>", index: 2 }
+  - { method: "<java.nio.file.Files: java.nio.file.Path createTempDirectory(java.nio.file.Path,java.lang.String,java.nio.file.attribute.FileAttribute[])>", index: 1 }
+  - { method: "<java.nio.file.Files: java.nio.file.Path createTempDirectory(java.lang.String,java.nio.file.attribute.FileAttribute[])>", index: 1 }
+  - { method: "<java.io.FileWriter: void <init>(java.lang.String)>", index: 0 }
+  - { method: "<java.io.FileWriter: void <init>(java.lang.String,boolean)>", index: 1 }
+  - { method: "<java.io.FileOutputStream: void <init>(java.lang.String)>", index: 0 }
+  - { method: "<java.io.FileOutputStream: void <init>(java.lang.String,boolean)>", index: 1 }
+
+  # --- CWE-78 command injection (source: commonly-used-taint-config/
+  # --- sink/injection/java/rce/command.yml)
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String)>", index: 0 }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String[])>", index: 0 }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String,java.lang.String[])>", index: 0 }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String,java.lang.String[])>", index: 1 }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String[],java.lang.String[])>", index: 0 }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String[],java.lang.String[])>", index: 1 }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String,java.lang.String[],java.io.File)>", index: 1 }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String,java.lang.String[],java.io.File)>", index: 2 }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String[],java.lang.String[],java.io.File)>", index: 1 }
+  - { method: "<java.lang.Runtime: java.lang.Process exec(java.lang.String[],java.lang.String[],java.io.File)>", index: 2 }
+  - { method: "<java.lang.ProcessBuilder: void <init>(java.lang.String[])>", index: 0 }
+  - { method: "<java.lang.ProcessBuilder: void <init>(java.util.List)>", index: 0 }
+  - { method: "<java.lang.ProcessBuilder: java.lang.ProcessBuilder command(java.lang.String[])>", index: 0 }
+  - { method: "<java.lang.ProcessBuilder: java.lang.ProcessBuilder command(java.util.List)>", index: 0 }
+
+  # --- CWE-79 XSS, servlet/JSP output (source: commonly-used-taint-config/
+  # --- sink/injection/javax/xss/output.yml)
+  - { method: "<javax.servlet.http.HttpServletResponse: void sendError(int,java.lang.String)>", index: 0 }
+  - { method: "<javax.servlet.http.HttpServletResponse: void setStatus(int,java.lang.String)>", index: 0 }
+  - { method: "<javax.servlet.http.HttpServletResponseWrapper: void sendError(int,java.lang.String)>", index: 0 }
+  - { method: "<javax.servlet.http.HttpServletResponseWrapper: void setStatus(int,java.lang.String)>", index: 0 }
+  - { method: "<javax.servlet.ServletOutputStream: void print(java.lang.String)>", index: 0 }
+  - { method: "<javax.servlet.ServletOutputStream: void println(java.lang.String)>", index: 0 }
+  - { method: "<javax.servlet.jsp.JspWriter: void write(java.lang.String)>", index: 0 }
+  - { method: "<javax.servlet.jsp.JspWriter: void write(java.lang.String,int,int)>", index: 2 }
+  - { method: "<javax.servlet.jsp.JspWriter: void write(char[])>", index: 0 }
+  - { method: "<javax.servlet.jsp.JspWriter: void write(char[],int,int)>", index: 2 }
+  - { method: "<javax.servlet.jsp.JspWriter: java.io.PrintWriter append(java.lang.CharSequence)>", index: 0 }
+  - { method: "<javax.servlet.jsp.JspWriter: java.io.PrintWriter append(java.lang.CharSequence,int,int)>", index: 2 }
+  - { method: "<javax.servlet.jsp.JspWriter: java.io.PrintWriter append(char)>", index: 0 }
+  - { method: "<javax.servlet.jsp.JspWriter: void print(char[])>", index: 0 }
+  - { method: "<javax.servlet.jsp.JspWriter: void print(java.lang.String)>", index: 0 }
+  - { method: "<javax.servlet.jsp.JspWriter: void print(java.lang.Object)>", index: 0 }
+  - { method: "<javax.servlet.jsp.JspWriter: void print(char)>", index: 0 }
+  - { method: "<javax.servlet.jsp.JspWriter: void println(char[])>", index: 0 }
+  - { method: "<javax.servlet.jsp.JspWriter: void println(java.lang.String)>", index: 0 }
+  - { method: "<javax.servlet.jsp.JspWriter: void println(java.lang.Object)>", index: 0 }
+  - { method: "<javax.servlet.jsp.JspWriter: void println(char)>", index: 0 }
+
+  # --- CWE-79 XSS, PrintWriter/PrintStream output (source:
+  # --- commonly-used-taint-config/sink/injection/java/xss/output.yml)
+  - { method: "<java.io.PrintWriter: void write(java.lang.String)>", index: 0 }
+  - { method: "<java.io.PrintWriter: void write(java.lang.String,int,int)>", index: 2 }
+  - { method: "<java.io.PrintWriter: void write(char[])>", index: 0 }
+  - { method: "<java.io.PrintWriter: void write(char[],int,int)>", index: 2 }
+  - { method: "<java.io.PrintWriter: void print(char[])>", index: 0 }
+  - { method: "<java.io.PrintWriter: void print(java.lang.String)>", index: 0 }
+  - { method: "<java.io.PrintWriter: void print(java.lang.Object)>", index: 0 }
+  - { method: "<java.io.PrintWriter: void print(char)>", index: 0 }
+  - { method: "<java.io.PrintWriter: void println(char[])>", index: 0 }
+  - { method: "<java.io.PrintWriter: void println(java.lang.String)>", index: 0 }
+  - { method: "<java.io.PrintWriter: void println(java.lang.Object)>", index: 0 }
+  - { method: "<java.io.PrintWriter: void println(char)>", index: 0 }
+  - { method: "<java.io.PrintWriter: java.io.PrintWriter printf(java.util.Locale,java.lang.String,java.lang.Object[])>", index: 0 }
+  - { method: "<java.io.PrintWriter: java.io.PrintWriter printf(java.util.Locale,java.lang.String,java.lang.Object[])>", index: 1 }
+  - { method: "<java.io.PrintWriter: java.io.PrintWriter printf(java.lang.String,java.lang.Object[])>", index: 0 }
+  - { method: "<java.io.PrintWriter: java.io.PrintWriter printf(java.lang.String,java.lang.Object[])>", index: 1 }
+  - { method: "<java.io.PrintWriter: java.io.PrintWriter append(java.lang.CharSequence)>", index: 0 }
+  - { method: "<java.io.PrintWriter: java.io.PrintWriter append(java.lang.CharSequence,int,int)>", index: 2 }
+  - { method: "<java.io.PrintWriter: java.io.PrintWriter append(char)>", index: 0 }
+  - { method: "<java.io.PrintStream: java.io.PrintStream printf(java.lang.String,java.lang.Object[])>", index: 1 }
+  - { method: "<java.io.PrintStream: java.io.PrintStream printf(java.util.Locale,java.lang.String,java.lang.Object[])>", index: 1 }
+
+  # --- CWE-89 SQL injection, plain JDBC (RESOLVED 2026-11-18).
+  # --- Tai-e's bundled configs have no java.sql sinks (only Android
+  # --- SQLite, Spring templates and Turbine), so these were built
+  # --- from the JDK 8 java.sql API and validated against actual
+  # --- BenchmarkJava usage in the 60 sampled CWE-89 cases (see
+  # --- PILOT.md for counts). Every entry takes the SQL string as
+  # --- argument 0.
+  # ---
+  # --- DESIGN DECISION (record for the report): the sink for
+  # --- PreparedStatement/CallableStatement is the PREPARE call
+  # --- (Connection.prepareStatement/prepareCall with a tainted SQL
+  # --- string), NOT the no-arg executeQuery()/executeUpdate()/
+  # --- execute() on the prepared statement -- those take no string,
+  # --- so they are deliberately NOT listed. The safe cases in the
+  # --- benchmark use prepareStatement with a constant SQL string
+  # --- plus setString() bindings, so no taint reaches the prepare
+  # --- call and no flow is reported; the vulnerable cases
+  # --- concatenate user input into the SQL string before preparing
+  # --- it, so the flow is caught at the prepare call. The
+  # --- distinction is therefore carried by taint on the SQL argument,
+  # --- not by method choice.
+  # --- java.sql.Statement, String-taking execute family:
+  - { method: "<java.sql.Statement: java.sql.ResultSet executeQuery(java.lang.String)>", index: 0 }
+  - { method: "<java.sql.Statement: boolean execute(java.lang.String)>", index: 0 }
+  - { method: "<java.sql.Statement: boolean execute(java.lang.String,int)>", index: 0 }
+  - { method: "<java.sql.Statement: boolean execute(java.lang.String,int[])>", index: 0 }
+  - { method: "<java.sql.Statement: boolean execute(java.lang.String,java.lang.String[])>", index: 0 }
+  - { method: "<java.sql.Statement: int executeUpdate(java.lang.String)>", index: 0 }
+  - { method: "<java.sql.Statement: int executeUpdate(java.lang.String,int)>", index: 0 }
+  - { method: "<java.sql.Statement: int executeUpdate(java.lang.String,int[])>", index: 0 }
+  - { method: "<java.sql.Statement: int executeUpdate(java.lang.String,java.lang.String[])>", index: 0 }
+  - { method: "<java.sql.Statement: long executeLargeUpdate(java.lang.String)>", index: 0 }
+  - { method: "<java.sql.Statement: long executeLargeUpdate(java.lang.String,int)>", index: 0 }
+  - { method: "<java.sql.Statement: long executeLargeUpdate(java.lang.String,int[])>", index: 0 }
+  - { method: "<java.sql.Statement: long executeLargeUpdate(java.lang.String,java.lang.String[])>", index: 0 }
+  - { method: "<java.sql.Statement: void addBatch(java.lang.String)>", index: 0 }
+  # --- java.sql.Connection, prepare family (the PreparedStatement sink):
+  - { method: "<java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String)>", index: 0 }
+  - { method: "<java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String,int)>", index: 0 }
+  - { method: "<java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String,int[])>", index: 0 }
+  - { method: "<java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String,java.lang.String[])>", index: 0 }
+  - { method: "<java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String,int,int)>", index: 0 }
+  - { method: "<java.sql.Connection: java.sql.PreparedStatement prepareStatement(java.lang.String,int,int,int)>", index: 0 }
+  - { method: "<java.sql.Connection: java.sql.CallableStatement prepareCall(java.lang.String)>", index: 0 }
+  - { method: "<java.sql.Connection: java.sql.CallableStatement prepareCall(java.lang.String,int,int)>", index: 0 }
+  - { method: "<java.sql.Connection: java.sql.CallableStatement prepareCall(java.lang.String,int,int,int)>", index: 0 }
+
+  # --- CWE-89 SQL injection, Spring JdbcTemplate (RESOLVED
+  # --- 2026-11-18). Tai-e's bundled spring file covers only
+  # --- update()/query() overloads, NOT the queryFor*/batchUpdate/
+  # --- execute methods BenchmarkJava actually uses (52x
+  # --- queryForObject, 39x batchUpdate, 27x queryForLong across all
+  # --- 2,740 files). Signatures below are the erased Spring
+  # --- JdbcTemplate API (generics erased: queryForObject returns
+  # --- java.lang.Object, queryForList returns java.util.List).
+  # --- The query() overloads are copied verbatim from Tai-e's
+  # --- bundled spring-framework/sql-injection/sql-spring.yml.
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: int update(java.lang.String)>", index: 0 }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: int batchUpdate(java.lang.String)>", index: 0 }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: int[] batchUpdate(java.lang.String[])>", index: 0 }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: void execute(java.lang.String)>", index: 0 }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: java.lang.Object queryForObject(java.lang.String,java.lang.Class)>", index: 0 }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: long queryForLong(java.lang.String)>", index: 0 }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: int queryForInt(java.lang.String)>", index: 0 }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: java.util.List queryForList(java.lang.String)>", index: 0 }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: java.util.List queryForList(java.lang.String,java.lang.Class)>", index: 0 }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: java.util.Map queryForMap(java.lang.String)>", index: 0 }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: org.springframework.jdbc.support.rowset.SqlRowSet queryForRowSet(java.lang.String)>", index: 0 }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: java.lang.Object query(java.lang.String,org.springframework.jdbc.core.ResultSetExtractor)>", index: 0 }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: void query(java.lang.String,org.springframework.jdbc.core.RowCallbackHandler)>", index: 0 }
+  - { method: "<org.springframework.jdbc.core.JdbcTemplate: java.util.List query(java.lang.String,org.springframework.jdbc.core.RowMapper)>", index: 0 }
+
+transfers:
+  # Subset copied verbatim from Tai-e's taint test config
+  # (src/test/resources/pta/taint/taint-config.yml). The full String
+  # transfer set lives in configs/taint-string-transfers.yml (copied
+  # verbatim from Tai-e's bundled transfer/string-transfers.yml);
+  # Tai-e loads a whole directory given as taint-config, so the pilot
+  # passes configs/ and both files are merged (see PILOT.md).
+  - { method: "<java.lang.String: java.lang.String concat(java.lang.String)>", from: base, to: result }
+  - { method: "<java.lang.String: java.lang.String concat(java.lang.String)>", from: 0, to: result }
+  - { method: "<java.lang.String: char[] toCharArray()>", from: base, to: result }
+  - { method: "<java.lang.String: void <init>(char[])>", from: 0, to: base }
+  - { method: "<java.lang.String: void getChars(int,int,char[],int)>", from: base, to: 2 }
+  - { method: "<java.lang.AbstractStringBuilder^: * append(java.lang.Object^)>", from: 0, to: base }
+  - { method: "<java.lang.AbstractStringBuilder^: * toString()>", from: base, to: result }
+
+  # --- Enumeration.nextElement (RESOLVED 2026-11-18): covers the
+  # --- getParameterNames()/getHeaderNames()/getHeaders() extraction
+  # --- shape, where the test code iterates an Enumeration and the
+  # --- String comes from nextElement(). This is a VAR->VAR transfer,
+  # --- which works in call-site mode with no resolved call edge
+  # --- (unlike the array/Map shapes in the KNOWN GAP note above,
+  # --- which need a real object in the result variable).
+  - { method: "<java.util.Enumeration: java.lang.Object nextElement()>", from: base, to: result, type: "java.lang.String" }
+
+# sanitizers: intentionally empty (see design note at the top of this
+# file). TODO (extension experiment only): if verified ESAPI / encoder
+# sanitizer entries are added here, record the exact entries and
+# re-run Tai-e as a separate, clearly labelled configuration.

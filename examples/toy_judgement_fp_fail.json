@@ -1,0 +1,1 @@
+{"confidence":0.8,"reasoning":"Input is HTML-encoded before the sink.","sanitizer_evidence":{"api":"encodeForHTML","line":10},"verdict":"FP"}

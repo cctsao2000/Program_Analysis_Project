@@ -1,0 +1,1 @@
+{"confidence":0.9,"reasoning":"Input is HTML-encoded with ESAPI before reaching the response writer, so the XSS sink is not reachable with attacker-controlled markup.","sanitizer_evidence":{"api":"encodeForHTML","line":11},"verdict":"FP"}
