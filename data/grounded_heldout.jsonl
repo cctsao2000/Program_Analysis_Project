@@ -1,0 +1,188 @@
+{"flow_id": "BenchmarkTest00001-0", "case": "BenchmarkTest00001", "cwe": "22", "llm_verdict": "FP", "final_verdict": "flagged", "grounding_status": "failed", "checks": ["line 42 has no string/numeric literal: 'userCookie.setDomain(new java.net.URL(request.getRequestURL().toString()).getHost());'"]}
+{"flow_id": "BenchmarkTest00001-1", "case": "BenchmarkTest00001", "cwe": "22", "llm_verdict": "FP", "final_verdict": "flagged", "grounding_status": "failed", "checks": ["line 42 has no string/numeric literal: 'userCookie.setDomain(new java.net.URL(request.getRequestURL().toString()).getHost());'"]}
+{"flow_id": "BenchmarkTest00001-2", "case": "BenchmarkTest00001", "cwe": "22", "llm_verdict": "FP", "final_verdict": "cleared", "grounding_status": "pass", "checks": ["line 121 contains a literal: 'File testFile2 = new File(TESTFILES_DIR + \"SafeText\");'"]}
+{"flow_id": "BenchmarkTest00001-3", "case": "BenchmarkTest00001", "cwe": "22", "llm_verdict": "FP", "final_verdict": "flagged", "grounding_status": "failed", "checks": ["line 42 has no string/numeric literal: 'userCookie.setDomain(new java.net.URL(request.getRequestURL().toString()).getHost());'"]}
+{"flow_id": "BenchmarkTest00001-4", "case": "BenchmarkTest00001", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00001-5", "case": "BenchmarkTest00001", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00001-6", "case": "BenchmarkTest00001", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00001-7", "case": "BenchmarkTest00001", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00001-8", "case": "BenchmarkTest00001", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00001-9", "case": "BenchmarkTest00001", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00001-10", "case": "BenchmarkTest00001", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00001-11", "case": "BenchmarkTest00001", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00001-12", "case": "BenchmarkTest00001", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00001-13", "case": "BenchmarkTest00001", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00007-0", "case": "BenchmarkTest00007", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00007-1", "case": "BenchmarkTest00007", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00007-2", "case": "BenchmarkTest00007", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00007-3", "case": "BenchmarkTest00007", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00171-0", "case": "BenchmarkTest00171", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00171-1", "case": "BenchmarkTest00171", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00171-2", "case": "BenchmarkTest00171", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00171-3", "case": "BenchmarkTest00171", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00363-0", "case": "BenchmarkTest00363", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00363-1", "case": "BenchmarkTest00363", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00363-2", "case": "BenchmarkTest00363", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00363-3", "case": "BenchmarkTest00363", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00363-4", "case": "BenchmarkTest00363", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00363-5", "case": "BenchmarkTest00363", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00554-0", "case": "BenchmarkTest00554", "cwe": "79", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00558-0", "case": "BenchmarkTest00558", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00558-1", "case": "BenchmarkTest00558", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00558-2", "case": "BenchmarkTest00558", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00558-3", "case": "BenchmarkTest00558", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00604-0", "case": "BenchmarkTest00604", "cwe": "89", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00604-1", "case": "BenchmarkTest00604", "cwe": "89", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00620-0", "case": "BenchmarkTest00620", "cwe": "22", "llm_verdict": "FP", "final_verdict": "flagged", "grounding_status": "failed", "checks": ["line 110 has no string/numeric literal: 'File tempDir = new File(TESTFILES_DIR);'"]}
+{"flow_id": "BenchmarkTest00620-1", "case": "BenchmarkTest00620", "cwe": "22", "llm_verdict": "FP", "final_verdict": "cleared", "grounding_status": "pass", "checks": ["line 113 contains a literal: 'File testFile = new File(TESTFILES_DIR + \"FileName\");'"]}
+{"flow_id": "BenchmarkTest00620-2", "case": "BenchmarkTest00620", "cwe": "22", "llm_verdict": "FP", "final_verdict": "cleared", "grounding_status": "pass", "checks": ["line 121 contains a literal: 'File testFile2 = new File(TESTFILES_DIR + \"SafeText\");'"]}
+{"flow_id": "BenchmarkTest00620-3", "case": "BenchmarkTest00620", "cwe": "22", "llm_verdict": "FP", "final_verdict": "cleared", "grounding_status": "pass", "checks": ["line 129 contains a literal: 'File secreTestFile = new File(TESTFILES_DIR + \"SecretFile\");'"]}
+{"flow_id": "BenchmarkTest00620-4", "case": "BenchmarkTest00620", "cwe": "22", "llm_verdict": "FP", "final_verdict": "flagged", "grounding_status": "failed", "checks": ["api 'java.util.List.remove' not found on line 55: 'valuesList.remove(0); // remove the 1st safe value'"]}
+{"flow_id": "BenchmarkTest00620-5", "case": "BenchmarkTest00620", "cwe": "22", "llm_verdict": "FP", "final_verdict": "cleared", "grounding_status": "pass", "checks": ["line 48 contains a literal: 'String bar = \"alsosafe\";'"]}
+{"flow_id": "BenchmarkTest00623-0", "case": "BenchmarkTest00623", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00623-1", "case": "BenchmarkTest00623", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00628-0", "case": "BenchmarkTest00628", "cwe": "22", "llm_verdict": "FP", "final_verdict": "flagged", "grounding_status": "failed", "checks": ["line 110 has no string/numeric literal: 'File tempDir = new File(TESTFILES_DIR);'"]}
+{"flow_id": "BenchmarkTest00628-1", "case": "BenchmarkTest00628", "cwe": "22", "llm_verdict": "FP", "final_verdict": "cleared", "grounding_status": "pass", "checks": ["line 113 contains a literal: 'File testFile = new File(TESTFILES_DIR + \"FileName\");'"]}
+{"flow_id": "BenchmarkTest00628-2", "case": "BenchmarkTest00628", "cwe": "22", "llm_verdict": "FP", "final_verdict": "cleared", "grounding_status": "pass", "checks": ["line 121 contains a literal: 'File testFile2 = new File(TESTFILES_DIR + \"SafeText\");'"]}
+{"flow_id": "BenchmarkTest00628-3", "case": "BenchmarkTest00628", "cwe": "22", "llm_verdict": "FP", "final_verdict": "cleared", "grounding_status": "pass", "checks": ["line 129 contains a literal: 'File secreTestFile = new File(TESTFILES_DIR + \"SecretFile\");'"]}
+{"flow_id": "BenchmarkTest00628-4", "case": "BenchmarkTest00628", "cwe": "22", "llm_verdict": "FP", "final_verdict": "cleared", "grounding_status": "pass", "checks": ["line 68 contains a literal: 'String g24315 = \"barbarians_at_the_gate\"; // This is static so this whole flow is \\'safe\\''"]}
+{"flow_id": "BenchmarkTest00628-5", "case": "BenchmarkTest00628", "cwe": "22", "llm_verdict": "FP", "final_verdict": "cleared", "grounding_status": "pass", "checks": ["line 68 contains a literal: 'String g24315 = \"barbarians_at_the_gate\"; // This is static so this whole flow is \\'safe\\''"]}
+{"flow_id": "BenchmarkTest00643-0", "case": "BenchmarkTest00643", "cwe": "79", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00646-0", "case": "BenchmarkTest00646", "cwe": "79", "llm_verdict": "FP", "final_verdict": "cleared", "grounding_status": "pass", "checks": ["line 48 contains a literal: 'String bar = \"alsosafe\";'"]}
+{"flow_id": "BenchmarkTest00788-0", "case": "BenchmarkTest00788", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00788-1", "case": "BenchmarkTest00788", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00788-2", "case": "BenchmarkTest00788", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00788-3", "case": "BenchmarkTest00788", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00788-4", "case": "BenchmarkTest00788", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00788-5", "case": "BenchmarkTest00788", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00809-0", "case": "BenchmarkTest00809", "cwe": "79", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00814-0", "case": "BenchmarkTest00814", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00814-1", "case": "BenchmarkTest00814", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00814-2", "case": "BenchmarkTest00814", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00814-3", "case": "BenchmarkTest00814", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00824-0", "case": "BenchmarkTest00824", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00824-1", "case": "BenchmarkTest00824", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00824-2", "case": "BenchmarkTest00824", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00824-3", "case": "BenchmarkTest00824", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00951-0", "case": "BenchmarkTest00951", "cwe": "22", "llm_verdict": "FP", "final_verdict": "flagged", "grounding_status": "failed", "checks": ["line 42 has no string/numeric literal: 'userCookie.setDomain(new java.net.URL(request.getRequestURL().toString()).getHost());'"]}
+{"flow_id": "BenchmarkTest00951-1", "case": "BenchmarkTest00951", "cwe": "22", "llm_verdict": "FP", "final_verdict": "cleared", "grounding_status": "pass", "checks": ["line 37 contains a literal: 'new javax.servlet.http.Cookie(\"BenchmarkTest00951\", \"FileName\");'"]}
+{"flow_id": "BenchmarkTest00951-2", "case": "BenchmarkTest00951", "cwe": "22", "llm_verdict": "FP", "final_verdict": "cleared", "grounding_status": "pass", "checks": ["line 121 contains a literal: 'File testFile2 = new File(TESTFILES_DIR + \"SafeText\");'"]}
+{"flow_id": "BenchmarkTest00951-3", "case": "BenchmarkTest00951", "cwe": "22", "llm_verdict": "FP", "final_verdict": "flagged", "grounding_status": "failed", "checks": ["line 42 has no string/numeric literal: 'userCookie.setDomain(new java.net.URL(request.getRequestURL().toString()).getHost());'"]}
+{"flow_id": "BenchmarkTest00951-4", "case": "BenchmarkTest00951", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00951-5", "case": "BenchmarkTest00951", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00951-6", "case": "BenchmarkTest00951", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00951-7", "case": "BenchmarkTest00951", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00951-8", "case": "BenchmarkTest00951", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00951-9", "case": "BenchmarkTest00951", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00979-0", "case": "BenchmarkTest00979", "cwe": "78", "llm_verdict": "FP", "final_verdict": "flagged", "grounding_status": "failed", "checks": ["line 110 has no string/numeric literal: 'File tempDir = new File(TESTFILES_DIR);'"]}
+{"flow_id": "BenchmarkTest00979-1", "case": "BenchmarkTest00979", "cwe": "78", "llm_verdict": "FP", "final_verdict": "flagged", "grounding_status": "failed", "checks": ["line 42 has no string/numeric literal: 'userCookie.setDomain(new java.net.URL(request.getRequestURL().toString()).getHost());'"]}
+{"flow_id": "BenchmarkTest00979-2", "case": "BenchmarkTest00979", "cwe": "78", "llm_verdict": "FP", "final_verdict": "cleared", "grounding_status": "pass", "checks": ["line 121 contains a literal: 'File testFile2 = new File(TESTFILES_DIR + \"SafeText\");'"]}
+{"flow_id": "BenchmarkTest00979-3", "case": "BenchmarkTest00979", "cwe": "78", "llm_verdict": "FP", "final_verdict": "cleared", "grounding_status": "pass", "checks": ["line 129 contains a literal: 'File secreTestFile = new File(TESTFILES_DIR + \"SecretFile\");'"]}
+{"flow_id": "BenchmarkTest00979-4", "case": "BenchmarkTest00979", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00979-5", "case": "BenchmarkTest00979", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00979-6", "case": "BenchmarkTest00979", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest00979-7", "case": "BenchmarkTest00979", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01005-0", "case": "BenchmarkTest01005", "cwe": "89", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01005-1", "case": "BenchmarkTest01005", "cwe": "89", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01117-0", "case": "BenchmarkTest01117", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01117-1", "case": "BenchmarkTest01117", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01117-2", "case": "BenchmarkTest01117", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01117-3", "case": "BenchmarkTest01117", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01117-4", "case": "BenchmarkTest01117", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01117-5", "case": "BenchmarkTest01117", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01240-0", "case": "BenchmarkTest01240", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01240-1", "case": "BenchmarkTest01240", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01240-2", "case": "BenchmarkTest01240", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01240-3", "case": "BenchmarkTest01240", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01240-4", "case": "BenchmarkTest01240", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01240-5", "case": "BenchmarkTest01240", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01286-0", "case": "BenchmarkTest01286", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01286-1", "case": "BenchmarkTest01286", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01286-2", "case": "BenchmarkTest01286", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01286-3", "case": "BenchmarkTest01286", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01287-0", "case": "BenchmarkTest01287", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01287-1", "case": "BenchmarkTest01287", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01287-2", "case": "BenchmarkTest01287", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01287-3", "case": "BenchmarkTest01287", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01314-0", "case": "BenchmarkTest01314", "cwe": "89", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01314-1", "case": "BenchmarkTest01314", "cwe": "89", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01409-0", "case": "BenchmarkTest01409", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01409-1", "case": "BenchmarkTest01409", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01409-2", "case": "BenchmarkTest01409", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01409-3", "case": "BenchmarkTest01409", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01409-4", "case": "BenchmarkTest01409", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01409-5", "case": "BenchmarkTest01409", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01409-6", "case": "BenchmarkTest01409", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01468-0", "case": "BenchmarkTest01468", "cwe": "89", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01468-1", "case": "BenchmarkTest01468", "cwe": "89", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01468-2", "case": "BenchmarkTest01468", "cwe": "89", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01475-0", "case": "BenchmarkTest01475", "cwe": "89", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01475-1", "case": "BenchmarkTest01475", "cwe": "89", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01496-0", "case": "BenchmarkTest01496", "cwe": "22", "llm_verdict": "FP", "final_verdict": "flagged", "grounding_status": "failed", "checks": ["line 110 has no string/numeric literal: 'File tempDir = new File(TESTFILES_DIR);'"]}
+{"flow_id": "BenchmarkTest01496-1", "case": "BenchmarkTest01496", "cwe": "22", "llm_verdict": "FP", "final_verdict": "cleared", "grounding_status": "pass", "checks": ["line 113 contains a literal: 'File testFile = new File(TESTFILES_DIR + \"FileName\");'"]}
+{"flow_id": "BenchmarkTest01496-2", "case": "BenchmarkTest01496", "cwe": "22", "llm_verdict": "FP", "final_verdict": "cleared", "grounding_status": "pass", "checks": ["line 121 contains a literal: 'File testFile2 = new File(TESTFILES_DIR + \"SafeText\");'"]}
+{"flow_id": "BenchmarkTest01496-3", "case": "BenchmarkTest01496", "cwe": "22", "llm_verdict": "FP", "final_verdict": "cleared", "grounding_status": "pass", "checks": ["line 129 contains a literal: 'File secreTestFile = new File(TESTFILES_DIR + \"SecretFile\");'"]}
+{"flow_id": "BenchmarkTest01496-4", "case": "BenchmarkTest01496", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01496-5", "case": "BenchmarkTest01496", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01554-0", "case": "BenchmarkTest01554", "cwe": "89", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01554-1", "case": "BenchmarkTest01554", "cwe": "89", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01554-2", "case": "BenchmarkTest01554", "cwe": "89", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01663-0", "case": "BenchmarkTest01663", "cwe": "79", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01840-0", "case": "BenchmarkTest01840", "cwe": "22", "llm_verdict": "FP", "final_verdict": "flagged", "grounding_status": "failed", "checks": ["line 42 has no string/numeric literal: 'userCookie.setDomain(new java.net.URL(request.getRequestURL().toString()).getHost());'"]}
+{"flow_id": "BenchmarkTest01840-1", "case": "BenchmarkTest01840", "cwe": "22", "llm_verdict": "FP", "final_verdict": "cleared", "grounding_status": "pass", "checks": ["line 113 contains a literal: 'File testFile = new File(TESTFILES_DIR + \"FileName\");'"]}
+{"flow_id": "BenchmarkTest01840-2", "case": "BenchmarkTest01840", "cwe": "22", "llm_verdict": "FP", "final_verdict": "cleared", "grounding_status": "pass", "checks": ["line 121 contains a literal: 'File testFile2 = new File(TESTFILES_DIR + \"SafeText\");'"]}
+{"flow_id": "BenchmarkTest01840-3", "case": "BenchmarkTest01840", "cwe": "22", "llm_verdict": "FP", "final_verdict": "flagged", "grounding_status": "failed", "checks": ["line 42 has no string/numeric literal: 'userCookie.setDomain(new java.net.URL(request.getRequestURL().toString()).getHost());'"]}
+{"flow_id": "BenchmarkTest01840-4", "case": "BenchmarkTest01840", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01840-5", "case": "BenchmarkTest01840", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01840-6", "case": "BenchmarkTest01840", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01840-7", "case": "BenchmarkTest01840", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01840-8", "case": "BenchmarkTest01840", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01840-9", "case": "BenchmarkTest01840", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01840-10", "case": "BenchmarkTest01840", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01840-11", "case": "BenchmarkTest01840", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01865-0", "case": "BenchmarkTest01865", "cwe": "78", "llm_verdict": "FP", "final_verdict": "flagged", "grounding_status": "failed", "checks": ["line 42 has no string/numeric literal: 'userCookie.setDomain(new java.net.URL(request.getRequestURL().toString()).getHost());'"]}
+{"flow_id": "BenchmarkTest01865-1", "case": "BenchmarkTest01865", "cwe": "78", "llm_verdict": "FP", "final_verdict": "cleared", "grounding_status": "pass", "checks": ["line 37 contains a literal: 'new javax.servlet.http.Cookie(\"BenchmarkTest01865\", \"ls\");'"]}
+{"flow_id": "BenchmarkTest01865-2", "case": "BenchmarkTest01865", "cwe": "78", "llm_verdict": "FP", "final_verdict": "cleared", "grounding_status": "pass", "checks": ["line 37 contains a literal: 'new javax.servlet.http.Cookie(\"BenchmarkTest01865\", \"ls\");'"]}
+{"flow_id": "BenchmarkTest01865-3", "case": "BenchmarkTest01865", "cwe": "78", "llm_verdict": "FP", "final_verdict": "cleared", "grounding_status": "pass", "checks": ["line 37 contains a literal: 'new javax.servlet.http.Cookie(\"BenchmarkTest01865\", \"ls\");'"]}
+{"flow_id": "BenchmarkTest01865-4", "case": "BenchmarkTest01865", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01865-5", "case": "BenchmarkTest01865", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01865-6", "case": "BenchmarkTest01865", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01865-7", "case": "BenchmarkTest01865", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01865-8", "case": "BenchmarkTest01865", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01865-9", "case": "BenchmarkTest01865", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01962-0", "case": "BenchmarkTest01962", "cwe": "89", "llm_verdict": null, "final_verdict": "flagged", "grounding_status": "llm_parse_error", "checks": ["JSON parse error: Expecting ',' delimiter: line 1 column 165 (char 164)"]}
+{"flow_id": "BenchmarkTest01962-1", "case": "BenchmarkTest01962", "cwe": "89", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01963-0", "case": "BenchmarkTest01963", "cwe": "89", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest01967-0", "case": "BenchmarkTest01967", "cwe": "89", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02032-0", "case": "BenchmarkTest02032", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02032-1", "case": "BenchmarkTest02032", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02032-2", "case": "BenchmarkTest02032", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02032-3", "case": "BenchmarkTest02032", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02032-4", "case": "BenchmarkTest02032", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02032-5", "case": "BenchmarkTest02032", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02107-0", "case": "BenchmarkTest02107", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02107-1", "case": "BenchmarkTest02107", "cwe": "22", "llm_verdict": "FP", "final_verdict": "flagged", "grounding_status": "failed", "checks": ["api 'org.owasp.esapi.ESAPI.encoder().encodeForHTML' not found on line 56: '.encodeForHTML(fileTarget.toString())'"]}
+{"flow_id": "BenchmarkTest02113-0", "case": "BenchmarkTest02113", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02113-1", "case": "BenchmarkTest02113", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02113-2", "case": "BenchmarkTest02113", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02113-3", "case": "BenchmarkTest02113", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02113-4", "case": "BenchmarkTest02113", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02113-5", "case": "BenchmarkTest02113", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02113-6", "case": "BenchmarkTest02113", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02149-0", "case": "BenchmarkTest02149", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02149-1", "case": "BenchmarkTest02149", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02149-2", "case": "BenchmarkTest02149", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02149-3", "case": "BenchmarkTest02149", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02173-0", "case": "BenchmarkTest02173", "cwe": "89", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02173-1", "case": "BenchmarkTest02173", "cwe": "89", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02361-0", "case": "BenchmarkTest02361", "cwe": "89", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02565-0", "case": "BenchmarkTest02565", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02565-1", "case": "BenchmarkTest02565", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02565-2", "case": "BenchmarkTest02565", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02565-3", "case": "BenchmarkTest02565", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02565-4", "case": "BenchmarkTest02565", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02565-5", "case": "BenchmarkTest02565", "cwe": "22", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02613-0", "case": "BenchmarkTest02613", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02613-1", "case": "BenchmarkTest02613", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02613-2", "case": "BenchmarkTest02613", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
+{"flow_id": "BenchmarkTest02613-3", "case": "BenchmarkTest02613", "cwe": "78", "llm_verdict": "TP", "final_verdict": "flagged", "grounding_status": "not_required", "checks": []}
